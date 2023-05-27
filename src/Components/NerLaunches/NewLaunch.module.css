@@ -1,0 +1,16 @@
+.image__container {
+  max-width: 90%;
+  margin: auto auto;
+}
+
+.category__heading {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+  background: linear-gradient(77deg, #a32cc4, #630436, #67032f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}

@@ -1,0 +1,89 @@
+.card {
+  width: 30rem;
+  height: 53rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  background-color: whitesmoke;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+.product__name {
+  max-width: 100dvw;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.card__details {
+  max-width: 100%;
+  height: 20rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.name__container {
+  max-width: 21rem;
+}
+
+.product__name p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: gray;
+}
+
+.whishList__icon {
+  font-size: 2rem;
+  fill: purple;
+  cursor: pointer;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: gray;
+}
+
+.button__container {
+  max-width: 100%;
+  height: max-content;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.button__container button {
+  max-width: 100%;
+  height: max-content;
+  padding: 1.2rem 5rem;
+  background-color: purple;
+  color: whitesmoke;
+  border: 1px solid purple;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.button__container button:hover {
+  background-color: whitesmoke;
+  color: purple;
+}
+
+.delete__icons {
+  font-size: 3rem;
+  fill: red;
+  cursor: pointer;
+}

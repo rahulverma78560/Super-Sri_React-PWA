@@ -1,0 +1,32 @@
+.rating__Button {
+  background-color: purple;
+  border: 1px solid #e0e0e0;
+  border-radius: 1rem;
+  color: whitesmoke;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 700;
+  height: max-content;
+  padding: 1rem 1.7rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.rating__Button__active {
+  background-color: purple;
+  border: 1px solid #e0e0e0;
+  border-radius: 1rem;
+  color: whitesmoke;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 700;
+  height: max-content;
+  padding: 1rem 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+  transform: scale(1.1);
+}
