@@ -23,13 +23,12 @@ const ProductListing = () => {
         </div>
       )}
       <h1 className={styles.product__heading}>SCULPTURE COLLECTION</h1>
-      <h1 className={styles.product__heading}>Our Best Selling Products</h1>
       <div className={styles.view__all}>
         <NavLink to="/products">
           <button className={styles.product__button}>View All</button>
         </NavLink>
       </div>
-      <div className="container">
+      <div className={styles.productlisting__page}>
         <div className={styles.grid__container}>
           {productData?.products.map((eachProduct, INDEX) => {
             return (
