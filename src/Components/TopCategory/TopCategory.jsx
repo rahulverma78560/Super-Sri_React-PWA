@@ -7,8 +7,8 @@ const TopCategory = () => {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 5,
+    slidesToScroll: 5,
     initialSlide: 0,
     responsive: [
       {
@@ -17,15 +17,14 @@ const TopCategory = () => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
         },
       },
       {
@@ -40,7 +39,7 @@ const TopCategory = () => {
   return (
     <section>
       <h1 className={styles.category__heading}>Our Best And Top Category</h1>
-      <div className="container">
+      <div className={styles.TopCategory__container}>
         <Slider {...settings}>
           <div className={styles.image__container}>
             <img src="/webp/c-1.webp" alt="" />
