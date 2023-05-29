@@ -5,7 +5,7 @@ const Partners = () => {
     <section>
       <div className={styles.partners__container}>
         <div className={styles.partner__image}>
-          <img src="/webp/ourclient-1.webp" alt="our_client_imgae" />
+          <img src="/webp/ourclient-1.webp" alt="our_clients" />
         </div>
       </div>
     </section>

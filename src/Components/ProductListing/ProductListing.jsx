@@ -33,7 +33,7 @@ const ProductListing = () => {
           {productData?.products.map((eachProduct, INDEX) => {
             return (
               <NavLink to={`/products/${eachProduct._id}`} key={eachProduct.id}>
-                {INDEX <= 14 && <Card DATA={eachProduct} />}
+                <Card DATA={eachProduct} />
               </NavLink>
             );
           })}
