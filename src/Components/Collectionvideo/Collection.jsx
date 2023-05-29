@@ -7,7 +7,7 @@ const Collection = () => {
       </h1>
       <div className="container">
         <div className={styles.image__container}>
-          <img src="/webp/allbestProduct.webp" alt="" />
+          <img src="/webp/allbestProduct.webp" alt="collection" />
         </div>
       </div>
     </section>
