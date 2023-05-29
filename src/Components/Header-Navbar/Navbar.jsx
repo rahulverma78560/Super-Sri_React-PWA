@@ -93,7 +93,7 @@ const Navbar = () => {
         </nav>
         <div className={styles.category}>
           <div className={styles.category__list}>
-            <marquee behavior="scroll" direction="left</div>" loop="-1">
+            <marquee behavior="scroll" direction="left" loop="-1">
               <ul>
                 <li>WORLDWIDE SHIPPING</li>
                 <li>100+ YEARS DURABILITY</li>

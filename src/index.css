@@ -12,7 +12,7 @@
 }
 
 html {
-  font-size: 65%;
+  font-size: 62.5%;
   scroll-behavior: smooth;
 }
 
@@ -42,48 +42,6 @@ section {
   margin: 4rem 0rem;
 }
 
-h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-h3 {
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-h4 {
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-}
-
-h5 {
-  font-size: 0.875rem;
-  font-weight: 300;
-  margin-bottom: 1rem;
-}
-
-h6 {
-  font-size: 0.75rem;
-  font-weight: 200;
-  margin-bottom: 1rem;
-}
-
-p {
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-}
-
 a {
   font-size: 1rem;
   font-weight: 400;
@@ -92,14 +50,8 @@ a {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   object-fit: cover;
-}
-
-button {
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
 }
 
 .slick-slider .slick-list {

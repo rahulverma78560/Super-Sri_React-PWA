@@ -16,17 +16,17 @@ const HomeCarusel = () => {
       <h2 className={styles.offer__text}> Best Offer and Best Products </h2>
       <div className={styles.Carousel__container}>
         <Slider {...settings}>
-          <div>
-            <img src="/slider/s-4.jpg" alt="" />
+          <div className={styles.image__container}>
+            <img loading="lazy" src="/real products/pa-1.webp" alt="" />
           </div>
-          <div>
-            <img src="/slider/s-5.jpg" alt="" />
+          <div className={styles.image__container}>
+            <img loading="lazy" src="/real products/pAa-1.webp" alt="" />
           </div>
-          <div>
-            <img src="/slider/p-6.jpg" alt="" />
+          <div className={styles.image__container}>
+            <img loading="lazy" src="/real products/pAb-1.webp" alt="" />
           </div>
-          <div>
-            <img src="/slider/s-7.jpg" alt="" />
+          <div className={styles.image__container}>
+            <img loading="lazy" src="/real products/pn-1.webp" alt="" />
           </div>
         </Slider>
       </div>

@@ -8,7 +8,7 @@ import ProductListing from "../../Components/ProductListing/ProductListing";
 import TopCategory from "../../Components/TopCategory/TopCategory";
 const Lading = () => {
   return (
-    <>
+    <div className="container">
       <HomeBanner />
       <Marquee />
       <HomeCarusel />
@@ -17,7 +17,7 @@ const Lading = () => {
       <TopCategory />
       <ProductListing />
       <Partners />
-    </>
+    </div>
   );
 };
 
