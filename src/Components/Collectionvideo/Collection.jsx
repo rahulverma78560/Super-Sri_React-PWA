@@ -5,9 +5,9 @@ const Collection = () => {
       <h1 className={styles.collection__heading}>
         Our Best Collection In one Frame
       </h1>
-      <div className="container">
+      <div className={styles.collection__container}>
         <div className={styles.image__container}>
-          <img src="/webp/allbestProduct.webp" alt="collection" />
+          <img src="/webp/inoneFrame.webp" alt="collection" />
         </div>
       </div>
     </section>
