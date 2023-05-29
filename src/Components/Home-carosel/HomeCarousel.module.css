@@ -5,7 +5,7 @@
 
 .image__container {
   max-width: 100%;
-  height: 42rem;
+  height: 32vh;
 }
 
 .image__container img {
@@ -25,6 +25,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  margin-bottom: 2rem;
 }
 
 /* for mobile */
@@ -35,7 +36,7 @@
   }
   .image__container {
     max-width: 100%;
-    height: 30rem;
+    height: 40vh;
   }
 }
 
@@ -47,7 +48,7 @@
   }
   .image__container {
     max-width: 100%;
-    height: 30rem;
+    height: 37vh;
   }
 }
 
@@ -59,7 +60,7 @@
   }
   .image__container {
     max-width: 100%;
-    height: 30rem;
+    height: 34vh;
   }
 }
 
@@ -71,6 +72,6 @@
   }
   .image__container {
     max-width: 100%;
-    height: 30rem;
+    height: 32vh;
   }
 }

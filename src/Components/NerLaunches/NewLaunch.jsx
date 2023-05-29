@@ -24,9 +24,9 @@ const NewLaunch = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
         },
       },
       {
@@ -41,7 +41,7 @@ const NewLaunch = () => {
   return (
     <section>
       <h1 className={styles.category__heading}>New Launch</h1>
-      <div className="container">
+      <div className={styles.new__launch__container}>
         <Slider {...settings}>
           {featureProducts.map((eachProduct) => {
             return (
