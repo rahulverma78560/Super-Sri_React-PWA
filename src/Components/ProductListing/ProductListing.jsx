@@ -6,7 +6,7 @@ import { Triangle } from "react-loader-spinner";
 const ProductListing = () => {
   const { productData } = useProducts();
   return (
-    <section>
+    <section id="SCULPTURE__COLLECTION">
       {productData.loading && (
         <div className="loader">
           {productData.loading && (

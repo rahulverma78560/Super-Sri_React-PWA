@@ -1,7 +1,7 @@
 .grid__container {
   max-width: 100%;
   margin: 0 auto;
-  height: calc(100vh - 8rem);
+  height: calc(100vh - 12rem);
   display: grid;
   grid-template-columns: repeat(1fr);
   gap: 1rem;
@@ -51,14 +51,23 @@
   text-align: center;
 }
 
-.brand__details button {
-  background: #a32cc4;
-  padding: 1rem 4rem;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: whitesmoke;
-  border-radius: 0.3rem;
-  box-shadow: var(--box-Shadow);
+.brand__details a {
+  background-color: transparent;
+  color: #a32cc4;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.brand__details a::after {
+  content: "→";
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  color: #a32cc4;
+  transition: all 0.3s ease-in-out;
 }
 
 /* for tablet */
