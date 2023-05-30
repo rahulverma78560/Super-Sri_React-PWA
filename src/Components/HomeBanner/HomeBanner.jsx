@@ -30,7 +30,7 @@ const HomeBanner = () => {
               monuments to delicate figurines, each one a testament to human
               creativity.
             </p>
-            <a href="SCULPTURE__COLLECTION"> Lets Elevate </a>
+            <a href="#SCULPTURE__COLLECTION"> Lets Elevate </a>
           </div>
         </div>
       </div>
