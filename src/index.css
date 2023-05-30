@@ -29,6 +29,8 @@ body {
   color: #000;
   font-family: "Playfair", serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {

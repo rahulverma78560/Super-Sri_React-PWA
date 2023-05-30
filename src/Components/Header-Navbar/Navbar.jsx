@@ -2,9 +2,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { BsSearch } from "react-icons/bs";
-import { VscAccount } from "react-icons/vsc";
-import { BsHandbagFill } from "react-icons/bs";
-import { AiOutlineHeart } from "react-icons/ai";
+import { TfiUser } from "react-icons/tfi";
+import { BsHandbag } from "react-icons/bs";
+import { CgHeart } from "react-icons/cg";
 import { BsWhatsapp } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { AiOutlineFacebook } from "react-icons/ai";
@@ -43,7 +43,7 @@ const Navbar = () => {
             <BsInstagram className={styles.nav__icons} />
             <GrTwitter className={styles.nav__icons} />
           </div>
-          <div className="mobile__app">
+          <div className={styles.mobile__app}>
             <p>Download Our App & get 20% OFF**</p>
           </div>
         </div>
@@ -69,10 +69,9 @@ const Navbar = () => {
           </div>
           <div className={styles.nav__list}>
             <ul>
-              <li className={styles.desktop__nav}>About Us</li>
+              <li className={styles.desktop__nav}>Home</li>
+              <li className={styles.desktop__nav}>All Sculptures</li>
               <li className={styles.desktop__nav}>Contact</li>
-              <li className={styles.desktop__nav}>Blog</li>
-              <li className={styles.desktop__nav}>Shop</li>
             </ul>
           </div>
 
@@ -81,13 +80,13 @@ const Navbar = () => {
             <NavLink
               to={!localStorage.getItem("token") ? "/login" : "/profile"}
             >
-              <VscAccount className={styles.nav__icon} />
-            </NavLink>
-            <NavLink to={"/cart"}>
-              <BsHandbagFill className={styles.nav__icon} />
+              <TfiUser className={styles.nav__icon} />
             </NavLink>
             <NavLink to={"/wishlist"}>
-              <AiOutlineHeart className={styles.nav__icon} />
+              <CgHeart className={styles.nav__icon} />
+            </NavLink>
+            <NavLink to={"/cart"}>
+              <BsHandbag className={styles.nav__icon} />
             </NavLink>
           </div>
         </nav>
@@ -112,10 +111,9 @@ const Navbar = () => {
           >
             <div className={styles.mobile__nav__list}>
               <ul>
-                <li>About Us</li>
+                <li>Home</li>
+                <li>All Sculptures</li>
                 <li>Contact</li>
-                <li>Blog</li>
-                <li>Shop</li>
               </ul>
             </div>
           </motion.div>

@@ -1,10 +1,9 @@
 .grid__container {
   max-width: 100%;
   margin: 0 auto;
-  height: calc(100vh - 12rem);
+  height: calc(100vh - 10rem);
   display: grid;
   grid-template-columns: repeat(1fr);
-  gap: 1rem;
   place-items: center;
 }
 
@@ -15,7 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 .brand__details h2 {
@@ -42,12 +41,12 @@
 }
 
 .brand__details p {
-  font-size: 1rem;
+  font-size: 1.7rem;
   font-weight: bold;
   color: #8e8e8e;
   text-transform: uppercase;
-  letter-spacing: 0.4rem;
-  line-height: 1.75rem;
+  letter-spacing: 0.2rem;
+  line-height: 2.2rem;
   text-align: center;
 }
 

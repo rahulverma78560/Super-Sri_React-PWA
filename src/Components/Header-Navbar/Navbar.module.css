@@ -1,11 +1,12 @@
 .header {
   width: 100%;
   height: 10rem;
+  background-color: #f8f3ec;
   position: sticky;
-  background-color: #cdfafe;
   left: 0;
   right: 0;
   top: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -15,6 +16,8 @@
 .navbar,
 .nav__list ul,
 .nav__icons {
+  max-width: 100%;
+  height: 4rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -22,7 +25,18 @@
   padding: 0.5rem 0;
   font-size: 3rem;
   font-weight: bold;
-  fill: rgb(252, 226, 252);
+}
+.nav__icons:nth-last-of-type(1) {
+  fill: #3b5998;
+}
+.nav__icons:nth-last-of-type(2) {
+  fill: #c13584;
+}
+.nav__icons:nth-last-of-type(3) {
+  fill: #5ffc7b;
+}
+.nav__icons:nth-last-of-type(4) {
+  fill: #00acee;
 }
 
 .desktop__nav,
@@ -44,8 +58,8 @@
   align-items: center;
   gap: 1rem;
   padding: 0rem 2rem;
-  background-color: #2e2e2e;
-  color: whitesmoke;
+  background-color: #f8f3ec;
+  color: #000;
 }
 
 .social__links {
@@ -59,8 +73,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2e2e2e;
-  color: whitesmoke;
+  background-color: #f8f3ec;
+  color: #000;
 }
 
 .category__list ul {
@@ -80,6 +94,13 @@
 
 .mobile__navigation__icons {
   display: none;
+}
+.mobile__app p {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: purple;
+  padding: 0.5rem 0rem;
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 911px) {
@@ -119,11 +140,14 @@
     position: absolute;
     top: 4rem;
     left: 0;
-    background-color: #cdfafe;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     gap: 1rem;
+    z-index: 999;
   }
   .nav__icon__hamburger {
     transform: rotate(0deg);
@@ -145,5 +169,8 @@
     font-weight: 700;
     letter-spacing: 0.2rem;
     color: inherit;
+  }
+  .nav__list {
+    display: none;
   }
 }

@@ -8,6 +8,7 @@ import Wishlist from "../Pages/Wishlist/Wishlist";
 import Mockman from "mockman-js";
 import RequireAuth from "../RequireAuth/RequireAuth";
 import Profile from "../Pages/Profile/Profile";
+import Login from "../Pages/Login-Register/Login";
 
 const FrontEndRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const FrontEndRoutes = () => {
       <Route path="/" element={<Landing />} />
       <Route path="/mockman" element={<Mockman />} />
       <Route path="/products" element={<Products />} />
+      <Route path="/login" element={<Login />} />
       <Route
         path="/cart"
         element={
