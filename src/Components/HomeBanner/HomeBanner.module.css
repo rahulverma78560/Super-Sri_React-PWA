@@ -47,7 +47,7 @@
   color: #8e8e8e;
   text-transform: uppercase;
   letter-spacing: 0.4rem;
-  line-height: 2.75rem;
+  line-height: 1.75rem;
   text-align: center;
 }
 
@@ -69,6 +69,16 @@
     height: calc(100vh - 28rem);
     grid-template-columns: 1fr 1fr;
   }
+  .grid__items__brand__details__container {
+    grid-column: 1 / 2;
+    grid-row: 2 / -3;
+  }
+
+  .grid__items__image__container {
+    grid-column: 2 / 3;
+    grid-row: 2/-2;
+  }
+
   .brand__details {
     gap: 1.5rem;
   }
@@ -108,7 +118,7 @@
   .brand__details p {
     font-size: 1.25rem;
     letter-spacing: 0.3rem;
-    line-height: 3.125rem;
+    line-height: 2.125rem;
     font-weight: 500;
   }
 }
@@ -132,7 +142,7 @@
   .brand__details p {
     font-size: 1.275rem;
     letter-spacing: 0.3rem;
-    line-height: 3.725rem;
+    line-height: 2.725rem;
     font-weight: 500;
   }
   .brand__details button {
