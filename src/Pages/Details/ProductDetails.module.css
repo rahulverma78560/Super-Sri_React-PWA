@@ -136,7 +136,7 @@
 }
 
 .addtocart__container {
-  max-width: 90%;
+  max-width: 100%;
   height: max-content;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -145,6 +145,10 @@
 }
 
 .addtocart__container button {
+  max-width: 100%;
+  height: auto;
+  padding: 2rem 0;
+  color: whitesmoke;
   background-color: purple;
   border-radius: 0.5rem;
 }
@@ -160,6 +164,7 @@
     height: auto;
     padding: 2rem 0;
     border-radius: 0.5rem;
+    color: whitesmoke;
   }
   .desc__container {
     width: 100%;

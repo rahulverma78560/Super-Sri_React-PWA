@@ -107,25 +107,19 @@ const ProductDetails = () => {
             <div className={styles.addtocart__container}>
               {singleProduct?.addedToCart ? (
                 <NavLink to={"/cart"}>
-                  <button className="btn btn-primary">Go to Cart</button>
+                  <button>Go to Cart</button>
                 </NavLink>
               ) : (
-                <button
-                  className="btn btn-primary"
-                  onClick={() => handleAddToCartItem(singleProduct)}
-                >
+                <button onClick={() => handleAddToCartItem(singleProduct)}>
                   Add to Cart
                 </button>
               )}
               {singleProduct?.addedToWishlist ? (
                 <NavLink to={"/wishlist"}>
-                  <button className="btn btn-primary">Go to Wishlist</button>
+                  <button>Go to Wishlist</button>
                 </NavLink>
               ) : (
-                <button
-                  className="btn btn-primary"
-                  onClick={() => handleAddToWishlist(singleProduct)}
-                >
+                <button onClick={() => handleAddToWishlist(singleProduct)}>
                   Add to Wishlist
                 </button>
               )}
