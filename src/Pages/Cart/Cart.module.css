@@ -11,7 +11,7 @@
 }
 
 .grid__container {
-  max-width: 98%;
+  max-width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 65% 30%;
@@ -101,10 +101,21 @@
   border-bottom: 1px solid #2e2e2e;
 }
 
-.check-out-button {
+.checkOut__button {
   width: 100%;
   padding: 1rem;
   cursor: pointer;
+  background-color: #a32cc4;
+  color: #fff;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.checkOut__button:hover {
+  background-color: #630436;
 }
 
 .empty__cart {

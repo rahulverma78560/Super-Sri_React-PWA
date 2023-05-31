@@ -5,16 +5,21 @@ import styles from "./WishlistCard.module.css";
 import { SlStar } from "react-icons/sl";
 import { MdDelete } from "react-icons/md";
 import { useProducts } from "../../Context/Products";
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
 const WishListCard = ({ DATA, wishlist }) => {
+  const [addedToCart, setAddedToCart] = useState(false);
   const { removeFromWishlistGoToWishlist } = useProducts();
   const { addItemToCart } = useCartContext();
   const { deleteItemFromWishlist } = useWishlist();
 
   const handleAddToCartFromWishlist = (Item) => {
+    setAddedToCart(true);
     addItemToCart(Item);
   };
 
   const handleRemoveFromWhislist = (ID) => {
+    setAddedToCart(false);
     deleteItemFromWishlist(ID);
     removeFromWishlistGoToWishlist(ID);
   };
@@ -36,9 +41,18 @@ const WishListCard = ({ DATA, wishlist }) => {
           <h1>5🌟</h1>
         </div>
         <div className={styles.button__container}>
-          <button onClick={() => handleAddToCartFromWishlist(DATA)}>
-            Add to Cart
-          </button>
+          {DATA?.addedToCart ? (
+            <NavLink to={"/cart"}>
+              <button>Go to Cart</button>
+            </NavLink>
+          ) : (
+            <button
+              disabled={addedToCart}
+              onClick={() => handleAddToCartFromWishlist(DATA)}
+            >
+              Add to Cart
+            </button>
+          )}
           {wishlist === "isWishlist" && (
             <MdDelete
               className={styles.delete__icons}

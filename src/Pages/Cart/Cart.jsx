@@ -199,9 +199,7 @@ const Cart = () => {
                   <h1>Total</h1>
                   <h3>{subTotalPrice - totalDiscount}</h3>
                 </div>
-                <button className="btn btn-primary check-out-button">
-                  Checkout
-                </button>
+                <button className={styles.checkOut__button}>Checkout</button>
               </div>
             </div>
           </>

@@ -82,6 +82,13 @@
   color: purple;
 }
 
+.button__container button:disabled {
+  background-color: gray;
+  color: whitesmoke;
+  border: 1px solid gray;
+  cursor: not-allowed;
+}
+
 .delete__icons {
   font-size: 3rem;
   fill: red;
