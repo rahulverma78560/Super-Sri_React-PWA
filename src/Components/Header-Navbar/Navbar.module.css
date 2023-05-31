@@ -165,9 +165,9 @@
   }
   .mobile__nav__list li {
     list-style: none;
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 0.2rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 0.4rem;
     color: inherit;
   }
   .nav__list {

@@ -69,8 +69,12 @@ const Navbar = () => {
           </div>
           <div className={styles.nav__list}>
             <ul>
-              <li className={styles.desktop__nav}>Home</li>
-              <li className={styles.desktop__nav}>All Sculptures</li>
+              <NavLink to={"/"}>
+                <li className={styles.desktop__nav}> Home </li>
+              </NavLink>
+              <NavLink to={"/products"}>
+                <li className={styles.desktop__nav}>All Sculptures</li>
+              </NavLink>
               <li className={styles.desktop__nav}>Contact</li>
             </ul>
           </div>
@@ -111,8 +115,12 @@ const Navbar = () => {
           >
             <div className={styles.mobile__nav__list}>
               <ul>
-                <li>Home</li>
-                <li>All Sculptures</li>
+                <NavLink to={"/"}>
+                  <li> Home </li>
+                </NavLink>
+                <NavLink to={"/products"}>
+                  <li>All Sculptures</li>
+                </NavLink>
                 <li>Contact</li>
               </ul>
             </div>
