@@ -1,7 +1,7 @@
 .grid__container {
   max-width: 100%;
   margin: 0 auto 2rem auto;
-  height: 100vh;
+  height: calc(100vh - 6rem);
   display: grid;
   grid-template-columns: repeat(1fr);
   place-items: center;
@@ -85,9 +85,52 @@
 @media screen and (min-width: 400px) {
   .grid__container {
     max-width: 100%;
-    height: 100vh;
+    height: calc(100vh - 20rem);
     grid-template-columns: 1fr;
     margin: 0 auto 2rem auto;
+  }
+
+  .img__container {
+    max-width: 100%;
+    height: 30rem;
+  }
+
+  .brand__details {
+    gap: 1.5rem;
+  }
+  .img__container {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .brand__details h2 {
+    font-size: 1.75rem;
+  }
+
+  .brand__details h1 {
+    font-size: 2.5rem;
+  }
+
+  .brand__details p {
+    font-size: 1.125rem;
+  }
+}
+@media screen and (min-width: 500px) {
+  .grid__container {
+    max-width: 100%;
+    height: calc(100vh - 20rem);
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto 2rem auto;
+    place-items: center;
+  }
+  .grid__items__brand__details__container {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .grid__items__image__container {
+    grid-column: 2 / 3;
+    grid-row: 2/-2;
   }
 
   .img__container {
@@ -122,6 +165,8 @@
     height: 100vh;
     grid-template-columns: 1fr 1fr;
     margin: 0 auto 2rem auto;
+    background-color: red;
+    place-items: center;
   }
   .grid__items__brand__details__container {
     grid-column: 1 / 2;
@@ -164,6 +209,15 @@
     place-items: center;
     margin: 0 auto 2rem auto;
   }
+  .grid__items__brand__details__container {
+    grid-column: 1 / 2;
+    grid-row: 2 / -3;
+  }
+
+  .grid__items__image__container {
+    grid-column: 2 / 3;
+    grid-row: 2/-2;
+  }
   .brand__details h2 {
     font-size: 2rem;
   }
@@ -185,6 +239,15 @@
     grid-template-columns: 1fr 1fr;
     place-items: center;
     margin: 0 auto 2rem auto;
+  }
+  .grid__items__brand__details__container {
+    grid-column: 1 / 2;
+    grid-row: 2 / -3;
+  }
+
+  .grid__items__image__container {
+    grid-column: 2 / 3;
+    grid-row: 2/-2;
   }
   .brand__details {
     gap: 3.75rem;
