@@ -79,7 +79,7 @@ const ProductDetails = () => {
               <h3>(58 Customer Review)</h3>
             </div>
             <div className={styles.price__container}>
-              <h3>Rs. {singleProduct?.price}</h3>
+              <h3>MRP - Rs. {singleProduct?.price}</h3>
               <h2>
                 Deal of the Day: Rs.
                 {singleProduct?.price - singleProduct?.discount}
