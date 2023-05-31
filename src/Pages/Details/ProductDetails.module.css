@@ -121,8 +121,8 @@
   font-size: 3rem;
 }
 
-.addtocart__container button {
-  max-width: 100%;
+.product__details__button {
+  width: 100%;
   height: auto;
   padding: 2rem 0;
   color: whitesmoke;
