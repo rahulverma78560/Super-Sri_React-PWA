@@ -170,7 +170,7 @@ const Cart = () => {
                         </div>
                       </div>
                       <div className={styles.item__price}>
-                        {eachItem?.price}
+                        Rs. {eachItem?.price}
                       </div>
                       <div className={styles.remove__item__icons}>
                         <MdDelete
