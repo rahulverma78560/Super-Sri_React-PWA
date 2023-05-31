@@ -1,10 +1,21 @@
 .grid__container {
   max-width: 100%;
-  margin: 0 auto;
-  height: calc(100vh - 10rem);
+  margin: 0 auto 2rem auto;
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(1fr);
   place-items: center;
+}
+
+.img__container {
+  max-width: 100%;
+  height: 25rem;
+}
+
+.img__container img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .brand__details {
@@ -71,11 +82,46 @@
 
 /* for tablet */
 
+@media screen and (min-width: 400px) {
+  .grid__container {
+    max-width: 100%;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    margin: 0 auto 2rem auto;
+  }
+
+  .img__container {
+    max-width: 100%;
+    height: max-content;
+  }
+
+  .brand__details {
+    gap: 1.5rem;
+  }
+  .img__container {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .brand__details h2 {
+    font-size: 1.75rem;
+  }
+
+  .brand__details h1 {
+    font-size: 2.5rem;
+  }
+
+  .brand__details p {
+    font-size: 1.125rem;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .grid__container {
     max-width: 100%;
-    height: calc(100vh - 28rem);
+    height: 100vh;
     grid-template-columns: 1fr 1fr;
+    margin: 0 auto 2rem auto;
   }
   .grid__items__brand__details__container {
     grid-column: 1 / 2;
@@ -113,9 +159,10 @@
 @media screen and (min-width: 992px) {
   .grid__container {
     display: grid;
-    height: calc(100vh - 28rem);
+    height: 100vh;
     grid-template-columns: 1fr 1fr;
     place-items: center;
+    margin: 0 auto 2rem auto;
   }
   .brand__details h2 {
     font-size: 2rem;
@@ -134,9 +181,10 @@
 @media screen and (min-width: 1200px) {
   .grid__container {
     display: grid;
-    height: calc(100vh - 25rem);
+    height: 100vh;
     grid-template-columns: 1fr 1fr;
     place-items: center;
+    margin: 0 auto 2rem auto;
   }
   .brand__details {
     gap: 3.75rem;
