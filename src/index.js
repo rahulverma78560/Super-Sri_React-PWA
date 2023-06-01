@@ -8,6 +8,7 @@ import ToasterProvider from "./Context/ReactToaster";
 import ProductsProvider from "./Context/Products";
 import CartProvider from "./Context/CartContext";
 import WishlistProvider from "./Context/Wishlist";
+import AddressProvider from "./Context/AddressContext";
 
 // Call make Server
 makeServer();
@@ -19,7 +20,9 @@ root.render(
       <ProductsProvider>
         <WishlistProvider>
           <CartProvider>
-            <App />
+            <AddressProvider>
+              <App />
+            </AddressProvider>
           </CartProvider>
         </WishlistProvider>
       </ProductsProvider>

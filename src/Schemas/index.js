@@ -15,4 +15,15 @@ const loginSchema = YUP.object().shape({
   password: YUP.string().min(8).required("Password is required"),
 });
 
-export { singupSchema, loginSchema };
+const addressSchema = YUP.object().shape({
+  fullName: YUP.string().required("Full Name is required"),
+  email: YUP.string().email().required("Email is required"),
+  phone: YUP.string().required("Phone Number is required"),
+  zip: YUP.string().required("Zip Code is required"),
+  country: YUP.string().required("Country is required"),
+  city: YUP.string().required("City is required"),
+  landmark: YUP.string().required("Landmark is required"),
+  address: YUP.string().required("Address is required"),
+});
+
+export { singupSchema, loginSchema, addressSchema };

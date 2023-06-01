@@ -9,6 +9,8 @@ import Mockman from "mockman-js";
 import RequireAuth from "../RequireAuth/RequireAuth";
 import Profile from "../Pages/Profile/Profile";
 import Login from "../Pages/Login-Register/Login";
+import Address from "../Pages/Address/Address";
+import OrderPlaced from "../Pages/SuccessPage/OrderPlaced";
 
 const FrontEndRoutes = () => {
   return (
@@ -17,6 +19,8 @@ const FrontEndRoutes = () => {
       <Route path="/mockman" element={<Mockman />} />
       <Route path="/products" element={<Products />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/address" element={<Address />} />
+      <Route path="/success" element={<OrderPlaced />} />
       <Route
         path="/cart"
         element={

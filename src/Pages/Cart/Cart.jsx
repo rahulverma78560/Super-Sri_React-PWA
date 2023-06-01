@@ -8,6 +8,7 @@ import { useCartContext } from "../../Context/CartContext";
 import { ToastContainer } from "react-toastify";
 import { Triangle } from "react-loader-spinner";
 import { useProducts } from "../../Context/Products";
+import { NavLink } from "react-router-dom";
 
 const Cart = () => {
   const { removeItemsFromCart, quantityHandler } = useCartContext();
@@ -199,7 +200,9 @@ const Cart = () => {
                   <h1>Total</h1>
                   <h3>{subTotalPrice - totalDiscount}</h3>
                 </div>
-                <button className={styles.checkOut__button}>Checkout</button>
+                <NavLink to={"/address"}>
+                  <button className={styles.checkOut__button}>Checkout</button>
+                </NavLink>
               </div>
             </div>
           </>
