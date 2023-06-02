@@ -63,7 +63,7 @@ const Address = () => {
               <h1 className="title">Previous Added Address</h1>
               {userAddress.map((address) => {
                 return (
-                  <div className={styles.address__container}>
+                  <div key={address.id} className={styles.address__container}>
                     <input
                       type="radio"
                       name="address"

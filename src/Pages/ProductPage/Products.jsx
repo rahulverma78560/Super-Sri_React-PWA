@@ -9,8 +9,7 @@ import InputCheckBox from "../../Common/inputCheckbox/InputCheckBox";
 import InputSlider from "../../Common/InputSlider/InputSlider";
 import RatingCard from "../../Common/RatingCard/RatingCard";
 import SizeInputBox from "../../Common/SizeInputCheckbox/SizeInputBox";
-const Products = (props) => {
-  console.log("🚀 ~ file: Products.jsx:13 ~ Products ~ props:", props)
+const Products = () => {
   const [showFilterOption, setShowFilterOption] = useState(true);
 
   const [searchQuery, setSearchQuery] = useState("");

@@ -14,16 +14,13 @@ const TopCategory = () => {
     error: "",
   });
   const { dispatch } = useProducts();
-  console.log(
-    "🚀 ~ file: TopCategory.jsx:13 ~ TopCategory ~ category:",
-    category
-  );
   const settings = {
     dots: true,
     infinite: false,
+    autoplay: false,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 5,
+    slidesToShow: 4,
+    slidesToScroll: 4,
     initialSlide: 0,
     responsive: [
       {
@@ -57,7 +54,6 @@ const TopCategory = () => {
       setCategory((prev) => ({ ...prev, loading: true }));
       try {
         const response = await axios.get("/api/categories");
-        console.log("🚀 ~ file: TopCategory.jsx:53 ~ response:", response);
         if (response.status === 200) {
           setCategory((prev) => ({
             ...prev,
@@ -66,7 +62,6 @@ const TopCategory = () => {
           }));
         }
       } catch (error) {
-        console.log(error);
         setCategory((prev) => ({
           ...prev,
           loading: false,
@@ -103,7 +98,7 @@ const TopCategory = () => {
         <Slider {...settings}>
           {category?.data?.map((eachCategory) => {
             return (
-              <div className={styles.image__container}>
+              <div key={eachCategory._id} className={styles.image__container}>
                 <NavLink to={"/products"}>
                   <img
                     src={eachCategory?.img[0]}

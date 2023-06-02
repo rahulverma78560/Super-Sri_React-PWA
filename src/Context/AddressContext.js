@@ -40,7 +40,6 @@ const AddressProvider = ({ children }) => {
   ]);
 
   const [selectedAddress , setSelectedAddress] = useState()
-  console.log("🚀 ~ file: AddressContext.js:43 ~ AddressProvider ~ selectedAddress:", selectedAddress)
  
 
   const getUserAddress = (address) => {

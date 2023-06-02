@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import styles from "./InputSlider.module.css";
 import { useProducts } from "../../Context/Products";
 const InputSlider = ({ PriceSliderfilterReset }) => {
-  console.log("🚀 ~ file: InputSlider.js:6 ~ InputSlider ~ PriceSliderfilterReset:", PriceSliderfilterReset)
   const { productData, dispatch, filterData } = useProducts();
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(0);
