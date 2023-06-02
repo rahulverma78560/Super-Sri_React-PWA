@@ -9,7 +9,8 @@ import InputCheckBox from "../../Common/inputCheckbox/InputCheckBox";
 import InputSlider from "../../Common/InputSlider/InputSlider";
 import RatingCard from "../../Common/RatingCard/RatingCard";
 import SizeInputBox from "../../Common/SizeInputCheckbox/SizeInputBox";
-const Products = () => {
+const Products = (props) => {
+  console.log("🚀 ~ file: Products.jsx:13 ~ Products ~ props:", props)
   const [showFilterOption, setShowFilterOption] = useState(true);
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -21,6 +22,12 @@ const Products = () => {
 
   const handleFilterUsingDropDown = (e) => {
     dispatch({ type: e.target.value });
+  };
+
+
+
+  const handleClearFilter = () => {
+    dispatch({ type: "CLEAR_ALL_FILTER" });
   };
 
   return (
@@ -41,79 +48,86 @@ const Products = () => {
         </div>
       )}
       <div className={styles.grid__container}>
-        <div className={styles.filter__section}>
-          <section>
-            <div className={styles.mobile__view}>
-              <button
-                className={styles.filter__button}
-                onClick={() => setShowFilterOption(!showFilterOption)}
-              >
-                {showFilterOption ? "Hide Filters" : "Show Filters"}
-              </button>
-            </div>
-            {showFilterOption && (
-              <>
-                <h1 className={styles.product__heading}>Filters</h1>
-                <div className="container">
-                  <div className={styles.search__filter__section}>
-                    <input
-                      type="text"
-                      placeholder="Search"
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                    />
-                  </div>
+        <div className={styles.filter__container}>
+          <div className={styles.mobile__view}>
+            <button
+              className={styles.filter__button}
+              onClick={() => setShowFilterOption(!showFilterOption)}
+            >
+              {showFilterOption ? "Hide Filters" : "Show Filters"}
+            </button>
+          </div>
+          <div
+            style={{
+              top: showFilterOption ? "10rem" : "250rem",
+            }}
+            className={styles.filter__section}
+          >
+            <section>
+              <h1 className={styles.product__heading}>Filters</h1>
+              <div className="container">
+                <div className={styles.search__filter__section}>
+                  <input
+                    type="text"
+                    placeholder="Search"
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                  />
                 </div>
-                <div className="container">
-                  <div className={styles.filter__container}>
-                    <div className={styles.filter__item}>
-                      <h1>Category</h1>
-                      <div className={styles.filter__item__list}>
-                        {filterData?.checkboxList.map((eachCategory) => {
-                          return (
-                            <InputCheckBox
-                              key={eachCategory.cId}
-                              DATA={eachCategory}
-                            />
-                          );
-                        })}
-                      </div>
-                    </div>
-                    <div className={styles.filter__item}>
-                      <h1>Size</h1>
-                      <div className={styles.filter__item__list}>
-                        {filterData?.sizeCheckboxList.map((eachCategory) => {
-                          return (
-                            <SizeInputBox
-                              key={eachCategory.sId}
-                              DATA={eachCategory}
-                            />
-                          );
-                        })}
-                      </div>
-                    </div>
-                    <div className={styles.filter__item}>
-                      <h1>Rating</h1>
-                      <div className={styles.rating__card__container}>
-                        {filterData?.ratingList.map((eachRating) => {
-                          return (
-                            <RatingCard
-                              key={eachRating.rId}
-                              DATA={eachRating}
-                            />
-                          );
-                        })}
-                      </div>
-                    </div>
-
-                    <div className={styles.filter__item__price__scroll}>
-                      <h1>Price Slider</h1>
-                      <InputSlider />
+              </div>
+              <div className="container">
+                <div className={styles.filter__container}>
+                  <div className={styles.filter__item}>
+                    <h1>Category</h1>
+                    <div className={styles.filter__item__list}>
+                      {filterData?.checkboxList.map((eachCategory) => {
+                        return (
+                          <InputCheckBox
+                            key={eachCategory.cId}
+                            DATA={eachCategory}
+                          />
+                        );
+                      })}
                     </div>
                   </div>
+                  <div className={styles.filter__item}>
+                    <h1>Size</h1>
+                    <div className={styles.filter__item__list}>
+                      {filterData?.sizeCheckboxList.map((eachCategory) => {
+                        return (
+                          <SizeInputBox
+                            key={eachCategory.sId}
+                            DATA={eachCategory}
+                          />
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <div className={styles.filter__item}>
+                    <h1>Rating</h1>
+                    <div className={styles.rating__card__container}>
+                      {filterData?.ratingList.map((eachRating) => {
+                        return (
+                          <RatingCard key={eachRating.rId} DATA={eachRating} />
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <div className={styles.filter__item__price__scroll}>
+                    <h1>Price Slider</h1>
+                    <InputSlider PriceSliderfilterReset={handleClearFilter} />
+                  </div>
+                  <div className="container">
+                    <button
+                      className={styles.Clear__all__button}
+                      onClick={handleClearFilter}
+                    >
+                      Clear All
+                    </button>
+                  </div>
                 </div>
-              </>
-            )}
-          </section>
+              </div>
+            </section>
+          </div>
         </div>
         <div className={styles.product__section}>
           <section>

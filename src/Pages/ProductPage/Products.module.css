@@ -17,6 +17,11 @@
   display: none;
 }
 
+.filter__container {
+  max-width: 100%;
+  height: max-content;
+}
+
 .filter__section {
   height: calc(100vh - 10rem);
   overflow: scroll;
@@ -59,7 +64,7 @@
 }
 
 .filter__item__list__item label {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 500;
   text-transform: capitalize;
   color: #1e1e1e;
@@ -130,6 +135,9 @@
 .search__filter__section {
   max-width: 100%;
   height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .search__filter__section input {
@@ -160,6 +168,39 @@
 
 .mobile__view {
   display: none;
+}
+
+.Clear__all__button {
+  width: 100%;
+  height: max-content;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background-color: #a32cc4;
+  color: whitesmoke;
+  font-size: 1.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 1500px) {
+  .grid__container {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .grid__container {
+    grid-template-columns: auto auto;
+    grid-gap: 1rem;
+  }
+  .filter__item__list__item label {
+  font-size: 1.275rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #1e1e1e;
+}
 }
 
 @media screen and (max-width: 768px) {
@@ -232,9 +273,14 @@
   .mobile__view {
     display: block;
     max-width: 90%;
-    margin: 0 auto;
+    margin: 2rem auto;
     height: max-content;
   }
+
+  .select__container:hover {
+    background-color: #a32cc4;
+  }
+
   .filter__button {
     width: 100%;
     margin-bottom: 1.25rem;
@@ -253,12 +299,15 @@
   }
 
   .filter__section {
+    max-width: 100%;
+    height: 100vh;
     position: absolute;
-    top: -5rem;
+    top: 10rem;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: whitesmoke;
-    z-index: 100;
+    z-index: 999999;
+    transition: all 0.5s ease;
   }
 }

@@ -16,6 +16,7 @@ const InputCheckBox = ({ DATA }) => {
         name={DATA.label}
         id={DATA.label}
         value={DATA.label}
+        checked={DATA.apply}
         onChange={(e) => handleSelectedCategory(DATA)}
       />
     </div>
