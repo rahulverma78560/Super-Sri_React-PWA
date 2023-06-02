@@ -75,6 +75,18 @@ const OrderPlaced = () => {
             confirmation email shortly.
           </p>
         </div>
+        <div className={styles.product__image}>
+          <div className={styles.image__container}>
+            {cartItems?.cartItems.map((item) => {
+              return (
+                <div className={styles.image__container__item}>
+                  <label htmlFor={item.name}>{item.name}</label>
+                  <img src={item.img[0]} alt="" />
+                </div>
+              );
+            })}
+          </div>
+        </div>
         <div className={styles.oreder__details}>
           <h1>Order Details</h1>
           <div className={styles.total__container}>
