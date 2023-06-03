@@ -21,23 +21,13 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   padding: 0.5rem 0;
   font-size: 3rem;
   font-weight: bold;
+  position: relative;
 }
-.nav__icons:nth-last-of-type(1) {
-  fill: #3b5998;
-}
-.nav__icons:nth-last-of-type(2) {
-  fill: #c13584;
-}
-.nav__icons:nth-last-of-type(3) {
-  fill: #5ffc7b;
-}
-.nav__icons:nth-last-of-type(4) {
-  fill: #00acee;
-}
+
 
 .desktop__nav,
 .nav__icon {
@@ -85,6 +75,16 @@
   padding: 0.5rem 0rem;
 }
 
+
+.badge__count {
+  background-color: purple;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0rem 1rem;
+  font-size: 2em;
+  position: absolute;
+  top: 0;
+}
 .nav__icon__hamburger {
   font-size: 2rem;
   color: #2e2e2e;
@@ -100,7 +100,6 @@
   font-weight: bold;
   color: purple;
   padding: 0.5rem 0rem;
-  text-decoration: underline;
 }
 
 @media screen and (max-width: 911px) {

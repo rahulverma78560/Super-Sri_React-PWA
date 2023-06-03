@@ -58,7 +58,7 @@ const Products = () => {
           </div>
           <div
             style={{
-              top: showFilterOption ? "10rem" : "250rem",
+              left: showFilterOption ? "0" : "-250rem",
             }}
             className={styles.filter__section}
           >

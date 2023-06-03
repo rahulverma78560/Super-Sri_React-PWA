@@ -4,8 +4,12 @@ import logout from "../../images/logout.png";
 const Profile = () => {
   const handleClearUser = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("user")
     window.location.href = "/login";
   };
+
+  
+
   return (
     <section>
       <div className="container">

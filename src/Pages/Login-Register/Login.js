@@ -48,7 +48,7 @@ const Login = () => {
           });
           if (response.status === 201) {
             userRegister("User Registered Successfully");
-            localStorage.setItem("user", response?.data?.user);
+            localStorage.setItem("user", response.data.user);
             userWarning("Please Login to Continue! don't forget to login");
           }
         } catch (err) {
@@ -64,16 +64,14 @@ const Login = () => {
     initialValues: INITIAL__VALUES__FOR__LOGIN,
     validationSchema: loginSchema,
     onSubmit: (userData, action) => {
-      console.log("🚀 ~ file: Login.js:65 ~ Login ~ userData:", userData);
       (async () => {
         try {
           const response = await axios.post(`/api/auth/login`, {
             ...userData,
           });
-          console.log("🚀 ~ file: Login.js:71 ~ response:", response);
-          localStorage.setItem("user", response?.data?.user);
           if (response.status === 200) {
             localStorage.setItem("token", response.data.encodedToken);
+            localStorage.setItem("user", JSON.stringify(response?.data?.foundUser));
             userRegister("User Logged in Successfully");
             navigate(location.state?.from ? location.state.from : "/");
           }
@@ -85,6 +83,8 @@ const Login = () => {
       action.resetForm();
     },
   });
+
+
 
   const handleSingUpUser = () => {
     if (errors) {
@@ -114,6 +114,7 @@ const Login = () => {
       localStorage.setItem("user", response?.data?.user);
       if (response.status === 200) {
         localStorage.setItem("token", response.data.encodedToken);
+        localStorage.setItem("user", JSON.stringify(response?.data?.foundUser))
         userRegister("User Logged in Successfully");
         navigate(location.state?.from ? location.state.from : "/");
       }

@@ -1,13 +1,10 @@
 footer {
   max-width: 100%;
   height: max-content;
-  margin-top: 1rem;
+  margin-top: auto;
   background-color: #000;
   color: whitesmoke;
   padding: 1rem 4rem;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 
 .grid__container {

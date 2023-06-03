@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import featureProducts from "../../Data/FeatureProducts";
 import styles from "./NewLaunch.module.css";
+import { NavLink } from "react-router-dom";
 const NewLaunch = () => {
   const settings = {
     dots: true,
@@ -46,7 +47,9 @@ const NewLaunch = () => {
           {featureProducts.map((eachProduct) => {
             return (
               <div key={eachProduct.id} className={styles.image__container}>
-                <img src={eachProduct.image} alt="" />
+                <NavLink to={"/products"}>
+                  <img src={eachProduct.image} alt="" />
+                </NavLink>
               </div>
             );
           })}

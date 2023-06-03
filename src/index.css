@@ -11,8 +11,17 @@
   outline: transparent;
 }
 
-html {
+html,
+body {
+  width: 100vw;
+  height: 100vh;
   font-size: 62.5%;
+  background-color: #f8f3ec;
+  color: #000;
+  font-family: "Playfair", serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
 }
 
@@ -22,15 +31,6 @@ html {
   --container-width-sm: 90%;
   --container-width-ssm: 95%;
   --box-Shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-}
-
-body {
-  background-color: #f8f3ec;
-  color: #000;
-  font-family: "Playfair", serif;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {

@@ -1,14 +1,9 @@
 /* eslint-disable jsx-a11y/no-distracting-elements */
-import { useState } from "react";
+import {  useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { BsSearch } from "react-icons/bs";
 import { TfiUser } from "react-icons/tfi";
 import { BsHandbag } from "react-icons/bs";
 import { CgHeart } from "react-icons/cg";
-import { BsWhatsapp } from "react-icons/bs";
-import { BsInstagram } from "react-icons/bs";
-import { AiOutlineFacebook } from "react-icons/ai";
-import { GrTwitter } from "react-icons/gr";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GiTireIronCross } from "react-icons/gi";
 import styles from "./Navbar.module.css";
@@ -33,16 +28,17 @@ const Navbar = () => {
     },
   };
 
+    useEffect(() => {
+      
+    },[])
+ 
+
+
   return (
     <>
       <header className={styles.header}>
         <div className={styles.social}>
-          <div className={styles.social__links}>
-            <AiOutlineFacebook className={styles.nav__icons} />
-            <BsWhatsapp className={styles.nav__icons} />
-            <BsInstagram className={styles.nav__icons} />
-            <GrTwitter className={styles.nav__icons} />
-          </div>
+          <div className={styles.social__links}></div>
           <div className={styles.mobile__app}>
             <p>Download Our App & get 20% OFF**</p>
           </div>
@@ -80,10 +76,7 @@ const Navbar = () => {
           </div>
 
           <div className={styles.nav__icons}>
-            <BsSearch className={styles.nav__icon} />
-            <NavLink
-              to={!localStorage.getItem("token") ? "/login" : "/profile"}
-            >
+            <NavLink to={localStorage.getItem("token") ? "/profile" : "/login"}>
               <TfiUser className={styles.nav__icon} />
             </NavLink>
             <NavLink to={"/wishlist"}>
