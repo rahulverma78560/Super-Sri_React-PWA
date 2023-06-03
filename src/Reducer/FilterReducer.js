@@ -2,7 +2,8 @@ const INITIAL_STATE = {
   productsData: [],
   updatedData: [],
   selectedCategory: [],
-  silderValue : 0,
+  noData: false,
+  silderValue: 0,
   checkboxList: [
     {
       cId: 1,
@@ -108,7 +109,8 @@ const filterReducer = (state, { type, payload }) => {
 
     case "HANDLE_CHECKED_CATEGORY": {
       const updatedCheckboxList = state.checkboxList.map((eachCategory) =>
-        eachCategory.cId === payload.cId || eachCategory.label === payload.category
+        eachCategory.cId === payload.cId ||
+        eachCategory.label === payload.category
           ? { ...eachCategory, apply: !eachCategory.apply }
           : { ...eachCategory }
       );
@@ -135,9 +137,9 @@ const filterReducer = (state, { type, payload }) => {
     }
 
     case "HANDLE_PRICE_SLIDER_FILTER": {
-      const { min, currentPrice , value } = payload;
+      const { min, currentPrice, value } = payload;
 
-      const filterDataWithPrice = [...state.productsData].filter(
+      const filterDataWithPrice = [...state.updatedData].filter(
         (eachProduct) =>
           eachProduct.price >= min &&
           eachProduct.price <= parseInt(currentPrice)
@@ -145,11 +147,11 @@ const filterReducer = (state, { type, payload }) => {
 
       return {
         ...state,
-        silderValue : value,
+        silderValue: value,
         updatedData:
           filterDataWithPrice.length > 0
             ? filterDataWithPrice
-            : state.productsData,
+            : state.noData === true,
       };
     }
 
@@ -168,7 +170,7 @@ const filterReducer = (state, { type, payload }) => {
         []
       );
 
-      const filterDataWithRating = state.productsData.filter((eachProduct) =>
+      const filterDataWithRating = state.updatedData.filter((eachProduct) =>
         activeRating.includes(`${eachProduct.rating}`)
       );
 
@@ -195,7 +197,7 @@ const filterReducer = (state, { type, payload }) => {
         []
       );
 
-      const filterDataWithSize = state.productsData.filter((eachProduct) =>
+      const filterDataWithSize = state.updatedData.filter((eachProduct) =>
         activeSize.includes(`${eachProduct.size}`)
       );
 
@@ -233,7 +235,7 @@ const filterReducer = (state, { type, payload }) => {
         checkboxList: updatedCheckboxList,
         ratingList: updatedRatingList,
         sizeCheckboxList: updatedSizeCheckboxList,
-        silderValue : updatedSliderValue,
+        silderValue: updatedSliderValue,
         updatedData: state.productsData,
       };
     }

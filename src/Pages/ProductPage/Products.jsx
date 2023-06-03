@@ -26,6 +26,7 @@ const Products = () => {
 
 
   const handleClearFilter = () => {
+
     dispatch({ type: "CLEAR_ALL_FILTER" });
   };
 
