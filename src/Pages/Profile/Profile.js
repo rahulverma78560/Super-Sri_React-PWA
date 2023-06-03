@@ -1,11 +1,13 @@
 import React from "react";
 import styles from "./Profile.module.css";
 import logout from "../../images/logout.png";
+import { useNavigate } from "react-router-dom";
 const Profile = () => {
+  const navigate = useNavigate()
   const handleClearUser = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user")
-    window.location.href = "/login";
+    navigate("/login")
   };
 
   

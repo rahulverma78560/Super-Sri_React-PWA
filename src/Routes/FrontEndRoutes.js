@@ -29,7 +29,14 @@ const FrontEndRoutes = () => {
           </RequireAuth>
         }
       />
-      <Route path="/profile" element={<Profile />} />
+      <Route
+        path="/profile"
+        element={
+          <RequireAuth>
+            <Profile />
+          </RequireAuth>
+        }
+      />
       <Route
         path="/products/:id"
         element={
