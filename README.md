@@ -104,5 +104,17 @@ Start the server
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot]("/../public/ScreenShots/singup.png")
+![App Screenshot]("/../public/ScreenShots/login.png")
+![App Screenshot]("/../public/ScreenShots/newLaunch.png")
+![App Screenshot]("/../public/ScreenShots/category.png")
+![App Screenshot]("/../public/ScreenShots/bestProduct.png")
+![App Screenshot]("/../public/ScreenShots/productlisting.png")
+![App Screenshot]("/../public/ScreenShots/cartpage.png")
+![App Screenshot]("/../public/ScreenShots/wishlistpage.png")
+![App Screenshot]("/../public/ScreenShots/addresspage.png")
+![App Screenshot]("/../public/ScreenShots/razorpay.png")
+![App Screenshot]("/../public/ScreenShots/paymentsuccess.png")
+![App Screenshot]("/../public/ScreenShots/paymentdoneresponse.png")
+![App Screenshot]("/../public/ScreenShots/success.png")
 
