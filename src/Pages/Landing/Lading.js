@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import Collection from "../../Components/Collectionvideo/Collection";
 import HomeCarusel from "../../Components/Home-carosel/HomeCarusel";
 import HomeBanner from "../../Components/HomeBanner/HomeBanner";
@@ -8,16 +9,30 @@ import ProductListing from "../../Components/ProductListing/ProductListing";
 import TopCategory from "../../Components/TopCategory/TopCategory";
 const Lading = () => {
   return (
-    <div className="container">
-      <HomeBanner />
-      <Marquee />
-      <HomeCarusel />
-      <NewLaunch />
-      <Collection />
-      <TopCategory />
-      <ProductListing />
-      <Partners />
-    </div>
+    <>
+      <div className="container">
+        <HomeBanner />
+        <Marquee />
+        <HomeCarusel />
+        <NewLaunch />
+        <Collection />
+        <TopCategory />
+        <ProductListing />
+        <Partners />
+      </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
+    </>
   );
 };
 

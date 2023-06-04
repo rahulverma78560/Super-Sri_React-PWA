@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/no-distracting-elements */
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { TfiUser } from "react-icons/tfi";
 import { BsHandbag } from "react-icons/bs";
@@ -12,24 +12,12 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [showMobileNav, setShowMobileNav] = useState(false);
-  const [loogedInUser, setLoggedInUser] = useState(null);
-  console.log(
-    "🚀 ~ file: Navbar.jsx:15 ~ Navbar ~ loogedInUser:",
-    loogedInUser
-  );
+  
 
   const handleShowMobileNav = () => {
     setShowMobileNav(true);
   };
 
-  const foundUser = JSON.parse(localStorage.getItem("user"));
-  console.log("🚀 ~ file: Navbar.jsx:25 ~ Navbar ~ foundUser:", foundUser)
-
-  useEffect(() => {
-    if (foundUser) {
-      setLoggedInUser(foundUser);
-    }
-  }, []);
 
   const items = {
     exit: {

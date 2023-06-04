@@ -16,7 +16,7 @@ const ProductDetails = () => {
   const { addToWishlist } = useWishlist();
   const { id } = useParams();
   const { productData, addedToCartGoCart, addToWishlistGoToWishlist } =
-    useProducts();
+  useProducts();
   const singleProduct = productData.products.find((item) => item._id === id);
 
   const handleAddToCartItem = () => {

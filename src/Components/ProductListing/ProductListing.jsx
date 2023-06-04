@@ -4,7 +4,8 @@ import { NavLink } from "react-router-dom";
 import { useProducts } from "../../Context/Products";
 import { Triangle } from "react-loader-spinner";
 const ProductListing = () => {
-  const { productData } = useProducts();
+  const { productData, addedToCartGoCart, addToWishlistGoToWishlist } =
+    useProducts();
   return (
     <section id="SCULPTURE__COLLECTION">
       {productData.loading && (
@@ -32,9 +33,14 @@ const ProductListing = () => {
         <div className={styles.grid__container}>
           {productData?.products.map((eachProduct) => {
             return (
-              <NavLink to={`/products/${eachProduct._id}`} key={eachProduct._id}>
-                <Card DATA={eachProduct} />
-              </NavLink>
+              <Card
+                key={eachProduct._id}
+                DATA={eachProduct}
+                addedToCart={eachProduct.addedToCart ? true : false}
+                addedToCartGoCart={addedToCartGoCart}
+                addToWishlistGoToWishlist={addToWishlistGoToWishlist}
+                addedToWishlist={eachProduct.addedToWishlist ? true : false}
+              />
             );
           })}
         </div>

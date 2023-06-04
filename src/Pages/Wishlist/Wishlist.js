@@ -13,6 +13,7 @@ const Wishlist = () => {
     loading: false,
     error: "",
   });
+  console.log("🚀 ~ file: Wishlist.js:16 ~ Wishlist ~ wishlistItems:", wishlistItems)
   const { updatedWishListData } = useWishlist();
 
   useEffect(() => {

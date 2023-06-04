@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import styles from "./Products.module.css";
 import Card from "../../Common/Card/Card";
-import { NavLink } from "react-router-dom";
 import { useProducts } from "../../Context/Products";
 import { Triangle } from "react-loader-spinner";
 import { useEffect, useState } from "react";
@@ -9,11 +8,18 @@ import InputCheckBox from "../../Common/inputCheckbox/InputCheckBox";
 import InputSlider from "../../Common/InputSlider/InputSlider";
 import RatingCard from "../../Common/RatingCard/RatingCard";
 import SizeInputBox from "../../Common/SizeInputCheckbox/SizeInputBox";
+import { ToastContainer } from "react-toastify";
 const Products = () => {
   const [showFilterOption, setShowFilterOption] = useState(true);
 
   const [searchQuery, setSearchQuery] = useState("");
-  const { productData, dispatch, filterData } = useProducts();
+  const {
+    productData,
+    dispatch,
+    filterData,
+    addedToCartGoCart,
+    addToWishlistGoToWishlist,
+  } = useProducts();
 
   useEffect(() => {
     dispatch({ type: "GET_PRODUCTS", payload: productData?.products });
@@ -23,15 +29,24 @@ const Products = () => {
     dispatch({ type: e.target.value });
   };
 
-
-
   const handleClearFilter = () => {
-
     dispatch({ type: "CLEAR_ALL_FILTER" });
   };
 
   return (
     <>
+      <ToastContainer
+        position="top-center"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
       {productData.loading && (
         <div className="loader">
           {productData.loading && (
@@ -171,9 +186,16 @@ const Products = () => {
                   )
                   .map((eachProduct) => {
                     return (
-                      <NavLink to={`${eachProduct._id}`} key={eachProduct._id}>
-                        <Card DATA={eachProduct} key={eachProduct._id} />
-                      </NavLink>
+                      <Card
+                        addedToCart={eachProduct.addedToCart ? true : false}
+                        addedToCartGoCart={addedToCartGoCart}
+                        addToWishlistGoToWishlist={addToWishlistGoToWishlist}
+                        addedToWishlist={
+                          eachProduct.addedToWishlist ? true : false
+                        }
+                        DATA={eachProduct}
+                        key={eachProduct._id}
+                      />
                     );
                   })}
               </div>
