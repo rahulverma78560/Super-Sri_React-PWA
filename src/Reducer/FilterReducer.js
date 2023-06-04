@@ -2,8 +2,8 @@ const INITIAL_STATE = {
   productsData: [],
   updatedData: [],
   selectedCategory: [],
-  noData: false,
-  silderValue: 0,
+  noData : false,
+  silderValue : 0,
   checkboxList: [
     {
       cId: 1,
@@ -109,8 +109,7 @@ const filterReducer = (state, { type, payload }) => {
 
     case "HANDLE_CHECKED_CATEGORY": {
       const updatedCheckboxList = state.checkboxList.map((eachCategory) =>
-        eachCategory.cId === payload.cId ||
-        eachCategory.label === payload.category
+        eachCategory.cId === payload.cId || eachCategory.label === payload.category
           ? { ...eachCategory, apply: !eachCategory.apply }
           : { ...eachCategory }
       );
@@ -137,7 +136,7 @@ const filterReducer = (state, { type, payload }) => {
     }
 
     case "HANDLE_PRICE_SLIDER_FILTER": {
-      const { min, currentPrice, value } = payload;
+      const { min, currentPrice , value } = payload;
 
       const filterDataWithPrice = [...state.updatedData].filter(
         (eachProduct) =>
@@ -147,11 +146,8 @@ const filterReducer = (state, { type, payload }) => {
 
       return {
         ...state,
-        silderValue: value,
-        updatedData:
-          filterDataWithPrice.length > 0
-            ? filterDataWithPrice
-            : state.noData === true,
+        silderValue : value,
+        updatedData: filterDataWithPrice.length > 0 ? filterDataWithPrice : state.productsData,
       };
     }
 
@@ -235,7 +231,7 @@ const filterReducer = (state, { type, payload }) => {
         checkboxList: updatedCheckboxList,
         ratingList: updatedRatingList,
         sizeCheckboxList: updatedSizeCheckboxList,
-        silderValue: updatedSliderValue,
+        silderValue : updatedSliderValue,
         updatedData: state.productsData,
       };
     }

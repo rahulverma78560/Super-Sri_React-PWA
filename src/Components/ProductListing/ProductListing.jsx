@@ -30,9 +30,9 @@ const ProductListing = () => {
       </div>
       <div className={styles.productlisting__page}>
         <div className={styles.grid__container}>
-          {productData?.products.map((eachProduct, INDEX) => {
+          {productData?.products.map((eachProduct) => {
             return (
-              <NavLink to={`/products/${eachProduct._id}`} key={eachProduct.id}>
+              <NavLink to={`/products/${eachProduct._id}`} key={eachProduct._id}>
                 <Card DATA={eachProduct} />
               </NavLink>
             );

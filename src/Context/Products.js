@@ -15,6 +15,7 @@ const ProductsProvider = ({ children }) => {
     products: [],
     loading: true,
     error: null,
+    noData: false,
   });
   const [filterData, dispatch] = useReducer(filterReducer, INITIAL_STATE);
   console.log("🚀 ~ file: Products.js:20 ~ ProductsProvider ~ filterData:", filterData)
