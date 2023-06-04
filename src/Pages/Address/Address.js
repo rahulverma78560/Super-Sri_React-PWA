@@ -53,6 +53,53 @@ const Address = () => {
     deleteUserAddress(selectedAddress.id);
     setShowEditAddress(false);
   };
+  const loadScript = (src) => {
+    return new Promise((resovle) => {
+      const script = document.createElement("script");
+      script.src = src;
+
+      script.onload = () => {
+        resovle(true);
+      };
+
+      script.onerror = () => {
+        resovle(false);
+      };
+
+      document.body.appendChild(script);
+    });
+  };
+
+  const displayRazorpay = async (amount) => {
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+
+    if (!res) {
+      alert("You are offline... Failed to load Razorpay SDK");
+      return;
+    }
+
+    const options = {
+      key: "rzp_test_VzBs1Ez8HO9Xsa",
+      currency: "INR",
+      amount: amount * 100,
+      name: "SuperSri",
+      description: "Thanks for purchasing",
+      image: "/public/assets/Images/brand logo-1.png",
+
+      handler: function (response) {
+        window.location.replace("/success");
+      },
+      prefill: {
+        name: "SuperSri",
+        desc : "The sculptures Webapp",
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  };
 
   return (
     <>
@@ -455,12 +502,24 @@ const Address = () => {
         pauseOnHover
         theme="colored"
       />
-      {selectedAddress && <div className="container">
-        <div className={styles.payment__button}>
-          <button className={styles.checkOut__button}>Pay online</button>
-          <button className={styles.checkOut__button} onClick={() => navigate("/success")} >Cash on delivery</button>
+      {selectedAddress && (
+        <div className="container">
+          <div className={styles.payment__button}>
+            <button
+              className={styles.checkOut__button}
+              onClick={() => displayRazorpay(3222)}
+            >
+              Pay online
+            </button>
+            <button
+              className={styles.checkOut__button}
+              onClick={() => navigate("/success")}
+            >
+              Cash on delivery
+            </button>
+          </div>
         </div>
-      </div>}
+      )}
     </>
   );
 };
