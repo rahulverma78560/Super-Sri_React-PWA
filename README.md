@@ -1,4 +1,3 @@
-
 # Project Title
 
 SUPERSRI - THE SCULPTURES SELLING WEBAPP
@@ -8,6 +7,7 @@ Supersri was envisioned and structured with a revolutionary and ingenious perspe
 We bring these beautifully crafted sculptures to your home, providing the experience of a lifetime to our clients and bridging the gap with our motto that sculptures can be customised and adorn our homes providing us with inexplicable happiness and motivation, bursting the notion that sculptures can be only present in public exhibitions or displays.
 
 We are the perfect blend of superlative technical finesse and passionate creative nuances to provide magnificent sculptures and other associated products.
+
 ## Run Locally
 
 Clone the project
@@ -25,6 +25,7 @@ Go to the project directory
 with npm
 
 Install dependencies
+
 ```bash
    npm install
 ```
@@ -49,7 +50,6 @@ Start the server
   yarn start
 ```
 
-
 ## Features
 
 - Landing page with a list of featured categories
@@ -71,10 +71,10 @@ Start the server
 - Toast and Loaders
 - Reponsive
 
-
 ## Build With
 
-**Client:** : 
+**Client:** :
+
 - React JS
 - React Context API + useReducer
 - React Router v6
@@ -84,9 +84,9 @@ Start the server
 - React Toastify
 - Razorpay payment gateway
 
-**Server:** : 
-- mockBee backend
+**Server:** :
 
+- mockBee backend
 
 ## Package used
 
@@ -100,21 +100,30 @@ Start the server
 - [react-toastify](https://yarnpkg.com/package/react-toastify)
 - [slick-carousel](https://yarnpkg.com/package/slick-carousel)
 
-
-
 ## Screenshots
 
-![App Screenshot]("/../public/ScreenShots/singup.png")
-![App Screenshot]("/../public/ScreenShots/login.png")
-![App Screenshot]("/../public/ScreenShots/newLaunch.png")
-![App Screenshot]("/../public/ScreenShots/category.png")
-![App Screenshot]("/../public/ScreenShots/bestProduct.png")
-![App Screenshot]("/../public/ScreenShots/productlisting.png")
-![App Screenshot]("/../public/ScreenShots/cartpage.png")
-![App Screenshot]("/../public/ScreenShots/wishlistpage.png")
-![App Screenshot]("/../public/ScreenShots/addresspage.png")
-![App Screenshot]("/../public/ScreenShots/razorpay.png")
-![App Screenshot]("/../public/ScreenShots/paymentsuccess.png")
-![App Screenshot]("/../public/ScreenShots/paymentdoneresponse.png")
-![App Screenshot]("/../public/ScreenShots/success.png")
+**Login:**: ![login](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/0d81bd4f-9df3-45ad-8df3-ed2e9b4ae73b)
 
+**SingUp:**: ![singup](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/d864a82e-261a-473d-ad47-2e5bf26ddfc7)
+
+**Home Page:**: ![homePage](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/f76d8990-ed10-4f77-aaaa-5fc87c04b813)
+
+**New Launch:**: ![newLaunch](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/4779a6ca-2125-48e8-9518-a1f2b020a45c)
+
+**Category:**: ![category](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/2fbd0a26-f010-4334-b33b-af865b4ac80b)
+
+**Best Products:**: ![bestProduct](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/1ff3a8b8-13e2-4058-8697-70922786353f)
+
+**Product Page:**: ![productlisting](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/4c95e260-f791-43bf-a4fc-4fd7f4801a92)
+
+**Product Details Page:**: ![detailspage](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/1a09db93-7320-428d-82c0-b893fc43f5ca)
+
+**Cart Page:**: ![cartpage](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/0ed559ca-c07d-41df-ab60-9c03b266a16d)
+
+**Wishlist Page:**: ![wishlistpage](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/631a97f9-8f83-4999-ae08-740acd1afdff)
+
+**Address Page:**: ![addresspage](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/96443bbc-b795-4581-880d-1ba1de157567)
+
+**Online Payment:**: ![paymentsuccess](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/2c35900e-d072-45dc-aaad-9cd92d39f9e8)
+
+**Success:**: ![success](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/df23b54b-3047-44a5-9524-d76cca06365b)

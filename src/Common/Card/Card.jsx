@@ -55,7 +55,7 @@ const Card = ({
           Deal of the Day: Rs. {DATA?.price - DATA?.discount}
         </h1>
       </div>
-      <div className={styles.button__container}>
+      {localStorage.getItem("token") && <div className={styles.button__container}>
         {addedToCart ? (
           <NavLink to={"/cart"}>
             <button>Go to Cart</button>
@@ -65,7 +65,7 @@ const Card = ({
             Add to Cart
           </button>
         )}
-      </div>
+      </div>}
     </div>
   );
 };
