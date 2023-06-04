@@ -89,7 +89,7 @@ const Address = () => {
       image: "/public/assets/Images/brand logo-1.png",
 
       handler: function (response) {
-        window.location.replace("/success");
+        navigate("/success");
       },
       prefill: {
         name: "SuperSri",

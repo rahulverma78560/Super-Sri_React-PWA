@@ -9,17 +9,15 @@ import ProductListing from "../../Components/ProductListing/ProductListing";
 import TopCategory from "../../Components/TopCategory/TopCategory";
 const Lading = () => {
   return (
-    <>
-      <div className="container">
-        <HomeBanner />
-        <Marquee />
-        <HomeCarusel />
-        <NewLaunch />
-        <Collection />
-        <TopCategory />
-        <ProductListing />
-        <Partners />
-      </div>
+    <div className="container">
+      <HomeBanner />
+      <Marquee />
+      <HomeCarusel />
+      <NewLaunch />
+      <Collection />
+      <TopCategory />
+      <ProductListing />
+      <Partners />
       <ToastContainer
         position="top-center"
         autoClose={4000}
@@ -32,7 +30,7 @@ const Lading = () => {
         pauseOnHover
         theme="colored"
       />
-    </>
+    </div>
   );
 };
 

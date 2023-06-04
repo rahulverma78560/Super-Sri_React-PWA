@@ -4,12 +4,14 @@ import successSvg from "../../success.json";
 import successStar from "../../success1.json";
 import styles from "./OrderPlaced.module.css";
 import axios from "axios";
+import { useAddress } from "../../Context/AddressContext";
 const OrderPlaced = () => {
   const [cartItems, setCartItems] = useState({
     cartItems: [],
     loading: true,
     error: false,
   });
+  const {selectedAddress} =  useAddress()
   useEffect(() => {
     (async () => {
       setCartItems((prev) => ({ ...prev, loading: true }));
@@ -85,6 +87,21 @@ const OrderPlaced = () => {
                 </div>
               );
             })}
+          </div>
+        </div>
+        <div  className={styles.address__container}>
+          <div>
+            <div className={styles.address__card__header}>
+              <h3>{selectedAddress.fullName}</h3>
+              <h3>{selectedAddress.phone}</h3>
+            </div>
+            <div className={styles.address__card__body}>
+              <p>{selectedAddress.address}</p>
+              <p>{selectedAddress.landmark}</p>
+              <p>{selectedAddress.city}</p>
+              <p>{selectedAddress.zip}</p>
+              <p>{selectedAddress.country}</p>
+            </div>
           </div>
         </div>
         <div className={styles.oreder__details}>
