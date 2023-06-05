@@ -81,6 +81,9 @@ img {
   justify-content: center;
   align-items: center;
 }
+#loom-companion-mv3 {
+  display: none !important;
+}
 
 @media screen and (max-width: 1200px) {
   .container {

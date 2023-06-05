@@ -1,4 +1,4 @@
-import { ToastContainer } from "react-toastify";
+// import { ToastContainer } from "react-toastify";
 import Collection from "../../Components/Collectionvideo/Collection";
 import HomeCarusel from "../../Components/Home-carosel/HomeCarusel";
 import HomeBanner from "../../Components/HomeBanner/HomeBanner";
@@ -18,18 +18,6 @@ const Lading = () => {
       <TopCategory />
       <ProductListing />
       <Partners />
-      <ToastContainer
-        position="top-center"
-        autoClose={4000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
     </div>
   );
 };
