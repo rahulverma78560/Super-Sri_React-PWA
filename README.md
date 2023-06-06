@@ -1,5 +1,7 @@
 # Project Title
 
+# Live - https://super-sri.netlify.app/
+
 SUPERSRI - THE SCULPTURES SELLING WEBAPP
 
 Supersri was envisioned and structured with a revolutionary and ingenious perspective of bringing innovation, unbridled emotions, abundant love and nostalgia through sculptures that help us reminisce the icons that inspire us and also personalised sculptures of our close ones who constantly live with us through our memories.
@@ -99,6 +101,10 @@ Start the server
 - [react-slick](https://yarnpkg.com/package/react-slick)
 - [react-toastify](https://yarnpkg.com/package/react-toastify)
 - [slick-carousel](https://yarnpkg.com/package/slick-carousel)
+
+# Demo
+
+**Full Demo Video:**: ![SuperSri_-_5_June_2023_AdobeExpress](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/59cf9dc1-7ddd-48ef-a01a-3d87aaf39aa6)
 
 ## Screenshots
 

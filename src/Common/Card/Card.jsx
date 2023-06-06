@@ -11,7 +11,9 @@ const Card = ({
   addedToCartGoCart,
   addedToCart,
   addToWishlistGoToWishlist,
-  addedToWishlist
+  addedToWishlist,
+  removeFromWishlistGoToWishlist,
+  deleteItemFromWishlist,
 }) => {
   const { addItemToCart } = useCartContext();
   const { addToWishlist } = useWishlist();
@@ -24,6 +26,11 @@ const Card = ({
   const handleAddToWishlist = (Item) => {
     addToWishlist(Item);
     addToWishlistGoToWishlist(Item?.name);
+  };
+
+  const handlereomveFromWishList = () => {
+    deleteItemFromWishlist(DATA?._id);
+    removeFromWishlistGoToWishlist(DATA?._id);
   };
 
   return (
@@ -39,7 +46,10 @@ const Card = ({
             <p>{DATA?.name}</p>
           </div>
           {addedToWishlist ? (
-            <BsFillStarFill className={styles.whishList__icon} />
+            <BsFillStarFill
+              onClick={() => handlereomveFromWishList(DATA)}
+              className={styles.whishList__icon}
+            />
           ) : (
             <SlStar
               className={styles.whishList__icon}
@@ -55,17 +65,19 @@ const Card = ({
           Deal of the Day: Rs. {DATA?.price - DATA?.discount}
         </h1>
       </div>
-      {localStorage.getItem("token") && <div className={styles.button__container}>
-        {addedToCart ? (
-          <NavLink to={"/cart"}>
-            <button>Go to Cart</button>
-          </NavLink>
-        ) : (
-          <button onClick={() => addItemToCartHandler(DATA)}>
-            Add to Cart
-          </button>
-        )}
-      </div>}
+      {localStorage.getItem("token") && (
+        <div className={styles.button__container}>
+          {addedToCart ? (
+            <NavLink to={"/cart"}>
+              <button>Go to Cart</button>
+            </NavLink>
+          ) : (
+            <button onClick={() => addItemToCartHandler(DATA)}>
+              Add to Cart
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 };

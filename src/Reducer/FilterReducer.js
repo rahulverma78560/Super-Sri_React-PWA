@@ -1,8 +1,6 @@
 const INITIAL_STATE = {
   productsData: [],
   updatedData: [],
-  selectedCategory: [],
-  noData : false,
   silderValue : 0,
   checkboxList: [
     {
@@ -109,9 +107,18 @@ const filterReducer = (state, { type, payload }) => {
 
     case "HANDLE_CHECKED_CATEGORY": {
       const updatedCheckboxList = state.checkboxList.map((eachCategory) =>
-        eachCategory.cId === payload.cId || eachCategory.label === payload.category
+        eachCategory.cId === payload.cId
           ? { ...eachCategory, apply: !eachCategory.apply }
           : { ...eachCategory }
+      );
+      return { ...state, checkboxList: updatedCheckboxList };
+    }
+
+    case "HANDLE_CHECKED_CATEGORY__fROM__CATEGORY": {
+      const updatedCheckboxList = state.checkboxList.map((eachCategory) =>
+        eachCategory.label === payload.category
+          ? { ...eachCategory, apply: true }
+          : { ...eachCategory, apply: false }
       );
       return { ...state, checkboxList: updatedCheckboxList };
     }
@@ -125,6 +132,7 @@ const filterReducer = (state, { type, payload }) => {
       const filterDataWithCategory = state.productsData.filter((eachProduct) =>
         activeCategory.includes(eachProduct.category)
       );
+      console.log("🚀 ~ file: FilterReducer.js:137 ~ filterReducer ~ filterDataWithCategory:", filterDataWithCategory)
 
       return {
         ...state,
@@ -134,9 +142,26 @@ const filterReducer = (state, { type, payload }) => {
             : state.productsData,
       };
     }
+    case "HANDLE_FILTER_WITH_CATEGORY__FROM__CATEGORY": {
+      console.log("running")
+      const activeCategory = state.checkboxList.reduce(
+        (acc, cur) => (cur.apply ? [...acc, cur.label] : acc),
+        []
+      );
+
+      const filterDataWithCategory = state.productsData.filter((eachProduct) =>
+        activeCategory.includes(eachProduct.category)
+      );
+      console.log("🚀 ~ file: FilterReducer.js:155 ~ filterReducer ~ filterDataWithCategory:", filterDataWithCategory)
+
+      return {
+        ...state,
+        updatedData: filterDataWithCategory,
+      };
+    }
 
     case "HANDLE_PRICE_SLIDER_FILTER": {
-      const { min, currentPrice , value } = payload;
+      const { min, currentPrice, value } = payload;
 
       const filterDataWithPrice = [...state.updatedData].filter(
         (eachProduct) =>
@@ -146,8 +171,11 @@ const filterReducer = (state, { type, payload }) => {
 
       return {
         ...state,
-        silderValue : value,
-        updatedData: filterDataWithPrice.length > 0 ? filterDataWithPrice : state.productsData,
+        silderValue: value,
+        updatedData:
+          filterDataWithPrice.length > 0
+            ? filterDataWithPrice
+            : state.productsData,
       };
     }
 
@@ -231,7 +259,7 @@ const filterReducer = (state, { type, payload }) => {
         checkboxList: updatedCheckboxList,
         ratingList: updatedRatingList,
         sizeCheckboxList: updatedSizeCheckboxList,
-        silderValue : updatedSliderValue,
+        silderValue: updatedSliderValue,
         updatedData: state.productsData,
       };
     }

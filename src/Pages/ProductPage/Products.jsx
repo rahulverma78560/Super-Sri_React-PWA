@@ -9,6 +9,7 @@ import InputSlider from "../../Common/InputSlider/InputSlider";
 import RatingCard from "../../Common/RatingCard/RatingCard";
 import SizeInputBox from "../../Common/SizeInputCheckbox/SizeInputBox";
 import { ToastContainer } from "react-toastify";
+import { useWishlist } from "../../Context/Wishlist";
 const Products = () => {
   const [showFilterOption, setShowFilterOption] = useState(true);
 
@@ -19,8 +20,10 @@ const Products = () => {
     filterData,
     addedToCartGoCart,
     addToWishlistGoToWishlist,
+    removeFromWishlistGoToWishlist,
   } = useProducts();
 
+  const { deleteItemFromWishlist } = useWishlist();
   useEffect(() => {
     dispatch({ type: "GET_PRODUCTS", payload: productData?.products });
   }, []);
@@ -193,6 +196,10 @@ const Products = () => {
                         addedToWishlist={
                           eachProduct.addedToWishlist ? true : false
                         }
+                        removeFromWishlistGoToWishlist={
+                          removeFromWishlistGoToWishlist
+                        }
+                        deleteItemFromWishlist={deleteItemFromWishlist}
                         DATA={eachProduct}
                         key={eachProduct._id}
                       />

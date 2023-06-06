@@ -3,9 +3,15 @@ import Card from "../../Common/Card/Card";
 import { NavLink } from "react-router-dom";
 import { useProducts } from "../../Context/Products";
 import { Triangle } from "react-loader-spinner";
+import { useWishlist } from "../../Context/Wishlist";
 const ProductListing = () => {
-  const { productData, addedToCartGoCart, addToWishlistGoToWishlist } =
-    useProducts();
+  const {
+    productData,
+    addedToCartGoCart,
+    addToWishlistGoToWishlist,
+    removeFromWishlistGoToWishlist,
+  } = useProducts();
+  const { deleteItemFromWishlist } = useWishlist();
   return (
     <section id="SCULPTURE__COLLECTION">
       {productData.loading && (
@@ -39,6 +45,8 @@ const ProductListing = () => {
                 addedToCart={eachProduct.addedToCart ? true : false}
                 addedToCartGoCart={addedToCartGoCart}
                 addToWishlistGoToWishlist={addToWishlistGoToWishlist}
+                removeFromWishlistGoToWishlist={removeFromWishlistGoToWishlist}
+                deleteItemFromWishlist={deleteItemFromWishlist}
                 addedToWishlist={eachProduct.addedToWishlist ? true : false}
               />
             );

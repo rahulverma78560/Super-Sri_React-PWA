@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -15,11 +16,9 @@ const TopCategory = () => {
   });
   const { dispatch } = useProducts();
   const settings = {
-    dots: true,
-    infinite: false,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 5,
+    slidesToShow: 4,
+    slidesToScroll: 4,
     initialSlide: 0,
     responsive: [
       {
@@ -35,8 +34,8 @@ const TopCategory = () => {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
-          initialSlide: 1,
+          slidesToScroll: 2,
+          initialSlide: 2,
         },
       },
       {
@@ -44,7 +43,6 @@ const TopCategory = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 1,
         },
       },
     ],
@@ -73,8 +71,10 @@ const TopCategory = () => {
   }, []);
 
   const handlefilterWithCategory = (eachCategory) => {
-    dispatch({ type: "HANDLE_CHECKED_CATEGORY", payload: eachCategory });
-    dispatch({ type: "HANDLE_FILTER_WITH_CATEGORY" });
+    dispatch({
+      type: "HANDLE_CHECKED_CATEGORY__fROM__CATEGORY",
+      payload: eachCategory,
+    });
   };
 
   return (

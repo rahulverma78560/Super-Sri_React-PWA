@@ -18,6 +18,7 @@ const ProductsProvider = ({ children }) => {
     noData: false,
   });
   const [filterData, dispatch] = useReducer(filterReducer, INITIAL_STATE);
+  console.log("🚀 ~ file: Products.js:22 ~ ProductsProvider ~ filterData:", filterData)
 
   useEffect(() => {
     (async () => {
@@ -93,7 +94,7 @@ const ProductsProvider = ({ children }) => {
   useEffect(() => {
     setProductData((prev) => ({
       ...prev,
-      products: filterData.updatedData ? filterData.updatedData : prev.products,
+      products: filterData.updatedData,
     }));
   }, [filterData]);
 
