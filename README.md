@@ -104,7 +104,7 @@ Start the server
 
 # Demo
 
-**Full Demo Video:**: ![SuperSri_-_5_June_2023_AdobeExpress](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/59cf9dc1-7ddd-48ef-a01a-3d87aaf39aa6)
+**Full Demo Video:**: ![super-sri](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/90e704fe-ba89-447d-bc2c-48a2a7e0e258)
 
 ## Screenshots
 
