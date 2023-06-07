@@ -3,7 +3,7 @@ import styles from "./Products.module.css";
 import Card from "../../Common/Card/Card";
 import { useProducts } from "../../Context/Products";
 import { Triangle } from "react-loader-spinner";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import InputCheckBox from "../../Common/inputCheckbox/InputCheckBox";
 import InputSlider from "../../Common/InputSlider/InputSlider";
 import RatingCard from "../../Common/RatingCard/RatingCard";
@@ -24,10 +24,7 @@ const Products = () => {
   } = useProducts();
 
   const { deleteItemFromWishlist } = useWishlist();
-  useEffect(() => {
-    dispatch({ type: "GET_PRODUCTS", payload: productData?.products });
-  }, []);
-
+ 
   const handleFilterUsingDropDown = (e) => {
     dispatch({ type: e.target.value });
   };

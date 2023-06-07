@@ -75,6 +75,7 @@ const TopCategory = () => {
       type: "HANDLE_CHECKED_CATEGORY__fROM__CATEGORY",
       payload: eachCategory,
     });
+    dispatch({ type: "HANDLE_FILTER_WITH_CATEGORY__FROM__CATEGORY" });
   };
 
   return (

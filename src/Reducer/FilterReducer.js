@@ -132,7 +132,6 @@ const filterReducer = (state, { type, payload }) => {
       const filterDataWithCategory = state.productsData.filter((eachProduct) =>
         activeCategory.includes(eachProduct.category)
       );
-      console.log("🚀 ~ file: FilterReducer.js:137 ~ filterReducer ~ filterDataWithCategory:", filterDataWithCategory)
 
       return {
         ...state,
@@ -143,7 +142,6 @@ const filterReducer = (state, { type, payload }) => {
       };
     }
     case "HANDLE_FILTER_WITH_CATEGORY__FROM__CATEGORY": {
-      console.log("running")
       const activeCategory = state.checkboxList.reduce(
         (acc, cur) => (cur.apply ? [...acc, cur.label] : acc),
         []
@@ -152,11 +150,10 @@ const filterReducer = (state, { type, payload }) => {
       const filterDataWithCategory = state.productsData.filter((eachProduct) =>
         activeCategory.includes(eachProduct.category)
       );
-      console.log("🚀 ~ file: FilterReducer.js:155 ~ filterReducer ~ filterDataWithCategory:", filterDataWithCategory)
 
       return {
         ...state,
-        updatedData: filterDataWithCategory,
+        updatedData: filterDataWithCategory.length > 0 ? filterDataWithCategory : state.productsData,
       };
     }
 
