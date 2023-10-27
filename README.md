@@ -102,10 +102,6 @@ Start the server
 - [react-toastify](https://yarnpkg.com/package/react-toastify)
 - [slick-carousel](https://yarnpkg.com/package/slick-carousel)
 
-# Demo
-
-**Full Demo Video:**: ![super-sri](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/90e704fe-ba89-447d-bc2c-48a2a7e0e258)
-
 ## Screenshots
 
 **Login:**: ![login](https://github.com/niku-19/E-commerce-web-app-super-sri/assets/88980648/0d81bd4f-9df3-45ad-8df3-ed2e9b4ae73b)
