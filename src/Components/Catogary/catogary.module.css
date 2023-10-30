@@ -1,0 +1,37 @@
+.cat{
+    width: 100%;
+  margin: auto;
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  padding-top:20px;
+}
+.cat_1{
+  width: 200px;
+  height: 130px;
+  /* background-color: aliceblue; */
+ /* border: 1px solid rgb(181, 181, 181); */
+ margin-left: 10px;
+
+}
+.cat_1 h3{
+  font-size: 18px;
+  text-align: center;
+}
+.car_img{
+  width: 100px;
+  height: auto;
+  margin: 10px;
+  background-color: pink;
+}
+.scroll{
+  width: 100%;
+  height: auto;
+  overflow-y: scroll;
+  display: flex;
+  
+}
+::-webkit-scrollbar{
+  display: none;
+}

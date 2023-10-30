@@ -1,4 +1,5 @@
 // import { ToastContainer } from "react-toastify";
+import Catogary from "../../Components/Catogary/catogary";
 import Collection from "../../Components/Collectionvideo/Collection";
 import HomeCarusel from "../../Components/Home-carosel/HomeCarusel";
 import HomeBanner from "../../Components/HomeBanner/HomeBanner";
@@ -10,8 +11,11 @@ import TopCategory from "../../Components/TopCategory/TopCategory";
 const Lading = () => {
   return (
     <div className="container">
+      <Catogary />
+
       <HomeBanner />
       <Marquee />
+      
       <HomeCarusel />
       <NewLaunch />
       <Collection />
