@@ -40,9 +40,7 @@ const FrontEndRoutes = () => {
       <Route
         path="/products/:id"
         element={
-          <RequireAuth>
             <ProductDetails />
-          </RequireAuth>
         }
       />
       <Route
