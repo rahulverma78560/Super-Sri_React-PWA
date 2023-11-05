@@ -10,19 +10,25 @@ import ProductListing from "../../Components/ProductListing/ProductListing";
 import TopCategory from "../../Components/TopCategory/TopCategory";
 const Lading = () => {
   return (
-    <div className="container">
-      <Catogary />
-
-      <HomeBanner />
-      <Marquee />
-      
+    <>
       <HomeCarusel />
-      <NewLaunch />
-      <Collection />
-      <TopCategory />
-      <ProductListing />
-      <Partners />
-    </div>
+      <div className="container">
+
+        {/* <TopCategory /> */}
+
+        <Catogary />
+
+        <Collection />
+        {/* <HomeBanner /> */}
+        {/* <Marquee />  */}
+           <NewLaunch /> 
+       
+      
+        <ProductListing />
+        <Partners />
+      </div>
+    </>
+
   );
 };
 

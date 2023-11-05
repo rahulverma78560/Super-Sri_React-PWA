@@ -16,7 +16,7 @@ const ProductDetails = () => {
   const { addToWishlist } = useWishlist();
   const { id } = useParams();
   const { productData, addedToCartGoCart, addToWishlistGoToWishlist } =
-  useProducts();
+    useProducts();
   const singleProduct = productData.products.find((item) => item._id === id);
 
   const handleAddToCartItem = () => {
@@ -43,7 +43,7 @@ const ProductDetails = () => {
         pauseOnHover
         theme="colored"
       />
-      <div className={styles.grid__container}>
+      {/* <div className={styles.grid__container}>
         <div className="container">
           <div className={styles.image__grid}>
             <div className={styles.image__container}>
@@ -136,7 +136,114 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
+      </div> */}
+
+      <div className={styles.grid__container}>
+
+        <div className={styles.image__grid}>
+          <div className={styles.image__container}>
+            <div className={styles.mutiple__image}>
+              {singleProduct?.img.map((eachImage, INDEX) => {
+                return (
+                  <img
+                    src={eachImage}
+                    key={INDEX}
+                    onClick={() => setSelectedImage(eachImage)}
+                    alt={eachImage}
+                  />
+                );
+              })}
+            </div>
+          </div>
+          <div className={styles.main__img__container}>
+            <img src={selectedImage || singleProduct?.img[0]} alt="" />
+          </div>
+        </div>
+
+
+        <div className={styles.details__container}>
+          <h1>{singleProduct?.name}</h1>
+          <div className={styles.product_sz}>
+            <div className={styles.size}>
+              <h3>Size</h3>
+            </div>
+            <div className={styles.size_boxes}>
+              <div className={styles.sz_box}>6 inch</div>
+              <div className={styles.sz_box}>8 inch</div>
+              <div className={styles.sz_box}>5 inch</div>
+              <div className={styles.sz_box}>12 inch</div>
+              <div className={styles.sz_box}>6 feet</div>
+              <div className={styles.sz_box}>8 feet</div>
+              <div className={styles.sz_box}>5 feet</div>
+              <div className={styles.sz_box}>12 feet</div>
+              <div className={styles.sz_box}>6 feet</div>
+              <div className={styles.sz_box}>8 inch</div>
+              <div className={styles.sz_box}>5 inch</div>
+              <div className={styles.sz_box}>12 inch</div>
+              <div className={styles.sz_box}>6 inch</div>
+              <div className={styles.sz_box}>8 inch</div>
+              <div className={styles.sz_box}>5 inch</div>
+              <div className={styles.sz_box}>12 inch</div>
+            </div>
+          </div>
+          <div className={styles.product_sz}>
+            <div className={styles.size}>
+              <h3>Quality</h3>
+            </div>
+            <div className={styles.size_boxes}>
+              <div className={styles.sz_box}>APlusGrade</div>
+              <div className={styles.sz_box}>AGrade</div>
+              <div className={styles.sz_box}>BGrade</div>
+
+            </div>
+          </div>
+          <div className={styles.product_sz}>
+            <div className={styles.size}>
+              <h3>Material</h3>
+            </div>
+            <div className={styles.size_boxes}>
+              <div className={styles.sz_box}>Wood</div>
+
+            </div>
+          </div>
+          <div className={styles.product_sz}>
+            <div className={styles.size}>
+              <h3>Quantity</h3>
+            </div>
+            <div className={styles.size_boxes}>
+              <span className={styles.decreament}>-</span>
+              <span className={styles.value} >23</span>
+              <span className={styles.increament}>+</span>
+              <p>(10 Available)</p>
+            </div>
+          </div>
+
+          <div className={styles.divider}></div>
+
+          <div className={styles.product_sz}>
+            <div className={styles.size}>
+              <h3>Total Prize</h3>
+            </div>
+            <div className={styles.size_boxes}>
+               <p className={styles.prize}> ₹ 50,000</p>
+            </div>
+          </div>
+          
+
+          <div className={styles.product_btn}>
+            <button className={styles.probtn}>Add to cart </button>
+          <button className={styles.probtn}>Buy Now</button>
+          </div>
+          <div className={styles.product_link}>
+            <h3 >Add to Wishlist </h3>
+          <h3 >add to compare</h3>
+          </div>
+
+        </div>
+
+
       </div>
+
     </>
   );
 };

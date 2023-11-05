@@ -1,6 +1,7 @@
 .collection__container {
   max-width: 100%;
   height: max-content;
+ 
 }
 .image__container {
   max-width: 100%;
@@ -25,6 +26,7 @@
   -webkit-text-fill-color: transparent;
   color: transparent;
   margin-bottom: 2rem;
+  margin-top: 80px;
 }
 
 /* for mobile */

@@ -1,0 +1,17 @@
+.privacy_content{
+    width: 100%;
+    height: auto;
+    font-family: 'Popins', sans-serif;
+    background-color: white;
+    padding-bottom: 30px;
+    padding: 20px;
+}
+
+.privacy_content p {
+    font-size: 1.7rem;
+    margin-top: 30px;
+    color: #687188;
+    line-height: 28px;
+    word-spacing: 1.5px;
+    padding-left: 10px;
+}

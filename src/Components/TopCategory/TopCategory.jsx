@@ -107,6 +107,7 @@ const TopCategory = () => {
                     alt={eachCategory?.name}
                     onClick={() => handlefilterWithCategory(eachCategory)}
                   />
+                  
                 </NavLink>
               </div>
             );
