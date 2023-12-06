@@ -1,7 +1,8 @@
 .header {
   width: 100%;
-  height: 10rem;
-  background-color: #f8f3ec;
+  height: 6.5rem;
+  background-color: rgb(255, 255, 255);
+
   position: sticky;
   left: 0;
   right: 0;
@@ -11,14 +12,34 @@
   flex-direction: column;
   gap: 0.5rem;
   z-index: 999;
-  box-shadow: 0px 0px 10px 1px gray;
+  box-shadow: 0px 0px 15px -10px rgb(31, 31, 31);
+}
+
+.header.active {
+  background-color: purple;
+  color: white
 }
 
 .navbar,
-.nav__list ul,
+.nav_list,
 .nav__icons {
   max-width: 100%;
-  height: 4rem;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  padding: 0.5rem 0;
+  font-size: 3rem;
+  font-weight: bold;
+  position: relative;
+
+  
+}
+
+.mobile_con {
+  max-width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -27,8 +48,33 @@
   font-size: 3rem;
   font-weight: bold;
   position: relative;
+  display: none;
 }
 
+input[type="search"]:focus {
+  box-shadow: 0px 0px 5px 0px #dccb5f;
+  /* border-color: #c3b454; */
+  outline: none;
+}
+
+.nosubmit {
+  border: none;
+  padding: 0;
+  height: 40px;
+
+}
+
+
+input.nosubmit {
+  width: 300px;
+  /* border: 2px solid #bcbcbc; */
+  box-shadow: 0px 0px 5px -2px #434343;
+  border-radius: 20px;
+  display: block;
+
+  padding: 9px 15px 9px 40px;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+}
 
 .desktop__nav,
 .nav__icon {
@@ -39,8 +85,29 @@
   color: inherit;
 }
 
+.mobile_con .nav__icon {
+  list-style: none;
+  font-size: 2.8rem;
+  font-weight: 700;
+  /* letter-spacing: 0.2rem; */
+  color: inherit;
+}
+.brand__logo, .nav_list, .nav__icons{
+  margin: auto;
+}
+
 .brand__logo {
-  max-width: 14rem;
+  max-width: 51rem;
+  display: flex;
+  height: auto;
+}
+
+.nav__icons h3 {
+  font-size: 2rem;
+}
+
+.brand__logo a img {
+  width: 18rem;
 }
 
 .social {
@@ -88,8 +155,9 @@
   position: absolute;
   top: 0;
 }
+
 .nav__icon__hamburger {
-  font-size: 2rem;
+  font-size: 2.8rem;
   color: #2e2e2e;
   cursor: pointer;
   transform: rotate(90deg);
@@ -98,6 +166,7 @@
 .mobile__navigation__icons {
   display: none;
 }
+
 .mobile__app p {
   font-size: 16px;
   font-weight: bold;
@@ -106,36 +175,78 @@
 }
 
 @media screen and (max-width: 911px) {
+
   .navbar,
   .nav__list ul,
   .nav__icons {
     gap: 1rem;
   }
+
   .desktop__nav,
   .nav__icon {
     font-size: 1rem;
   }
 }
 
-@media screen and (max-width: 748px) {
+@media screen and (max-width: 768px) {
   .header {
-    height: 4rem;
+    height: 6rem;
   }
+
+  .mobile_con {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    padding: 0.5rem 0;
+    font-size: 3rem;
+    font-weight: bold;
+    position: relative;
+    
+  }
+
+  .navbar {
+    padding-left: 22px;
+    padding-right: 20px;
+    justify-content: unset;
+  }
+
+  .nav__icons {
+    display: none;
+  }
+
+  .navbar .nav__icon a h3 {
+    display: none;
+  }
+
   .desktop__nav {
     display: none;
   }
-  .brand__logo {
-    max-width: 10rem;
+
+  .nav_list {
+    display: none;
   }
+
+  .brand__logo {
+    max-width: 16rem;
+  }
+
   .social {
     display: none;
   }
+
   .category {
     display: none;
   }
+
   .mobile__navigation__icons {
     display: block;
+    margin-top: 9px;
   }
+
   .mobile__navigation {
     width: 100%;
     height: calc(100vh - 4rem);
@@ -151,9 +262,11 @@
     gap: 1rem;
     z-index: 999;
   }
+
   .nav__icon__hamburger {
     transform: rotate(0deg);
   }
+
   .mobile__nav__list ul {
     display: flex;
     flex-direction: column;
@@ -161,10 +274,12 @@
     align-items: center;
     gap: 3rem;
   }
-  .nav__icon {
+
+  /* .nav__icon {
     font-size: 1.75rem;
     font-weight: bold;
-  }
+  } */
+
   .mobile__nav__list li {
     list-style: none;
     font-size: 2.5rem;
@@ -172,7 +287,6 @@
     letter-spacing: 0.4rem;
     color: inherit;
   }
-  .nav__list {
-    display: none;
-  }
+
+
 }

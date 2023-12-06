@@ -4,8 +4,12 @@ import { useCartContext } from "../../Context/CartContext";
 import styles from "./Card.module.css";
 import { SlStar } from "react-icons/sl";
 import { BsFillStarFill } from "react-icons/bs";
-
+import Slider from "react-slick";
 import { useWishlist } from "../../Context/Wishlist";
+import product1 from '../../images/pAe-1.webp'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const Card = ({
   DATA,
   addedToCartGoCart,
@@ -33,53 +37,64 @@ const Card = ({
     removeFromWishlistGoToWishlist(DATA?._id);
   };
 
+  
+
+
+
+
   return (
-    <div className={styles.card}>
-      <NavLink to={`/products/${DATA?._id}`}>
-        <div className={styles.card__image}>
-          <img src={DATA?.img[0]} alt="" />
-        </div>
-      </NavLink>
-      <div className={styles.card__details}>
-        <div className={styles.product__name}>
-          <div className={styles.name__container}>
-            <p>{DATA?.name}</p>
+    <>
+      <div className={styles.card}>
+        <NavLink to={`/products/${DATA?._id}`}>
+          <div className={styles.card__image}>
+            <img src={DATA?.img[0]} alt="" /> knjknjnknk
           </div>
-          {addedToWishlist ? (
-            <BsFillStarFill
-              onClick={() => handlereomveFromWishList(DATA)}
-              className={styles.whishList__icon}
-            />
-          ) : (
-            <SlStar
-              className={styles.whishList__icon}
-              onClick={() => handleAddToWishlist(DATA)}
-            />
-          )}
+        </NavLink>
+        <div className={styles.card__details}>
+          <div className={styles.product__name}>
+            <div className={styles.name__container}>
+              <p>{DATA?.name}</p>
+            </div>
+            {addedToWishlist ? (
+              <BsFillStarFill
+                onClick={() => handlereomveFromWishList(DATA)}
+                className={styles.whishList__icon}
+              />
+            ) : (
+              <SlStar
+                className={styles.whishList__icon}
+                onClick={() => handleAddToWishlist(DATA)}
+              />
+            )}
+          </div>
+          <div className={styles.price}>
+            <h2>Rs. {DATA?.price}</h2>
+            <h1>{DATA?.rating}🌟 </h1>
+          </div>
+          <h1 className={styles.current__price}>
+            Deal of the Day: Rs. {DATA?.price - DATA?.discount}
+          </h1>
         </div>
-        <div className={styles.price}>
-          <h2>Rs. {DATA?.price}</h2>
-          <h1>{DATA?.rating}🌟</h1>
-        </div>
-        <h1 className={styles.current__price}>
-          Deal of the Day: Rs. {DATA?.price - DATA?.discount}
-        </h1>
+        {localStorage.getItem("token") && (
+          <div className={styles.button__container}>
+            {addedToCart ? (
+              <NavLink to={"/cart"}>
+                <button>Go to Cart</button>
+              </NavLink>
+            ) : (
+              <button onClick={() => addItemToCartHandler(DATA)}>
+                Add to Cart
+              </button>
+            )}
+          </div>
+        )}
       </div>
-      {localStorage.getItem("token") && (
-        <div className={styles.button__container}>
-          {addedToCart ? (
-            <NavLink to={"/cart"}>
-              <button>Go to Cart</button>
-            </NavLink>
-          ) : (
-            <button onClick={() => addItemToCartHandler(DATA)}>
-              Add to Cart
-            </button>
-          )}
-        </div>
-      )}
-    </div>
+
+
+    </>
   );
 };
+
+
 
 export default Card;

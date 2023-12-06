@@ -2,17 +2,20 @@
 /* eslint-disable jsx-a11y/no-distracting-elements */
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { TfiUser } from "react-icons/tfi";
-import { BsHandbag } from "react-icons/bs";
+import { FaWhatsapp } from "react-icons/fa";
+import { BsCart3 } from "react-icons/bs";
 import { CgHeart } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GiTireIronCross } from "react-icons/gi";
+import { BsTelephone } from "react-icons/bs";
 import styles from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+
   const [showMobileNav, setShowMobileNav] = useState(false);
-  
+  const [header, setHeader] = useState(false);
+
 
   const handleShowMobileNav = () => {
     setShowMobileNav(true);
@@ -31,24 +34,43 @@ const Navbar = () => {
     },
   };
 
+  const changeBackground = () => {
+    console.log(window.scrollY);
+    if (window.scrollY >= 80) {
+
+      setHeader(true);
+    }
+    else {
+      setHeader(false);
+    }
+  };
+
+  window.addEventListener('scroll', changeBackground);
+
   return (
     <>
       <header className={styles.header}>
-        <div className={styles.social}>
+        {/* <div className={styles.social}>
           <div className={styles.social__links}></div>
           <div className={styles.mobile__app}>
             <p>Download Our App & get 20% OFF**</p>
           </div>
-        </div>
+        </div> */}
         <nav className={styles.navbar}>
           <div className={styles.mobile__navigation__icons}>
             {!showMobileNav && (
-              <GiHamburgerMenu
-                onClick={handleShowMobileNav}
-                className={styles.nav__icon__hamburger}
-              />
+              <>
+                <GiHamburgerMenu
+                  onClick={handleShowMobileNav}
+                  className={styles.nav__icon__hamburger}
+                />
+
+              </>
+
             )}
             {showMobileNav && (
+
+
               <GiTireIronCross
                 onClick={() => setShowMobileNav(false)}
                 className={styles.nav__icon__hamburger}
@@ -59,32 +81,38 @@ const Navbar = () => {
             <NavLink to={"/"}>
               <img src="/assets/Images/brand logo-1.png" alt="" />
             </NavLink>
+
+
           </div>
-          <div className={styles.nav__list}>
-            <ul>
-              <NavLink to={"/"}>
-                <li className={styles.desktop__nav}> Home </li>
-              </NavLink>
-              <NavLink to={"/products"}>
-                <li className={styles.desktop__nav}>All Sculptures</li>
-              </NavLink>
-              <li className={styles.desktop__nav}>Contact</li>
-            </ul>
+
+          <div className={styles.nav_list}>
+            <form class="nosubmit">
+
+              <input className={styles.nosubmit} type="search" placeholder="Search..." />
+            </form>
           </div>
+
+          <div className={styles.mobile_con}>
+                 <FaWhatsapp className={styles.nav__icon} />
+          </div>
+
 
           <div className={styles.nav__icons}>
             <NavLink to={"/profile"}>
-              <TfiUser className={styles.nav__icon} />
+              <h3 >  Login/Signup</h3>
             </NavLink>
             <NavLink to={"/wishlist"}>
               <CgHeart className={styles.nav__icon} />
             </NavLink>
             <NavLink to={"/cart"}>
-              <BsHandbag className={styles.nav__icon} />
+              <BsCart3 className={styles.nav__icon} />
+            </NavLink>
+            <NavLink to={"/cart"}>
+              <BsTelephone className={styles.nav__icon} />
             </NavLink>
           </div>
         </nav>
-        <div className={styles.category}>
+        {/* <div className={styles.category}>
           <div className={styles.category__list}>
             <marquee behavior="scroll" direction="left" loop="-1">
               <ul>
@@ -94,7 +122,7 @@ const Navbar = () => {
               </ul>
             </marquee>
           </div>
-        </div>
+        </div> */}
         {showMobileNav && (
           <motion.div
             initial={{ x: "-100vw", opacity: 0 }}

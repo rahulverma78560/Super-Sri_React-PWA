@@ -1,4 +1,6 @@
 // import { ToastContainer } from "react-toastify";
+import Card from "../../Common/Card/Card";
+import { Productcard } from "../../Common/Product/productcard";
 import Catogary from "../../Components/Catogary/catogary";
 import Collection from "../../Components/Collectionvideo/Collection";
 import HomeCarusel from "../../Components/Home-carosel/HomeCarusel";
@@ -12,7 +14,7 @@ const Lading = () => {
   return (
     <>
       <HomeCarusel />
-      <div className="container">
+      
 
         {/* <TopCategory /> */}
 
@@ -21,12 +23,12 @@ const Lading = () => {
         <Collection />
         {/* <HomeBanner /> */}
         {/* <Marquee />  */}
-           <NewLaunch /> 
+           {/* <NewLaunch />  */}
        
+        <Productcard />
+        {/* <ProductListing /> */}
+        {/* <Partners /> */}
       
-        <ProductListing />
-        <Partners />
-      </div>
     </>
 
   );

@@ -82,37 +82,68 @@ export default function Catogary() {
          </div>
       </div> */}
 
-         <div className={style.cat_container}>
-         <h1 className={style.category__heading}>Our Best And Top Category</h1>
-            <div className={style.row}>
-               <div className={style.col}>
-                  <img src="/assets/Images/cat1.jpg" />
-                  <div className={style.cat_btn}>CATOGARY</div>
+         <div className='container'>
+
+            <div className={style.cat_container}>
+               <h1 className={style.category__heading}>Our Best And Top Category</h1>
+               <div className={style.row}>
+                  <div className={style.col}>
+                     <img src="/assets/Images/cat1.jpg" />
+                     <div className={style.cat_btn}>
+                        <button>CATOGARY</button>
+                     </div>
+                  </div>
+                  <div className={style.col}>
+                     <img src="/assets/Images/cat2.jpg" />
+                     <div className={style.cat_btn}>
+                        <button>CATOGARY</button>
+                     </div>
+                  </div>
+                  <div className={style.col_hide}>
+                     <img src="/assets/Images/cat1.jpg" />
+                     <div className={style.cat_btn}>
+                        <button>CATOGARY</button>
+                     </div>
+                  </div>
                </div>
-               <div className={style.col}>
-                  <img src="/assets/Images/cat2.jpg" />
-                  <div className={style.cat_btn}>CATOGARY</div>
+               <div className={style.row}>
+                  <div className={style.col}>
+                     <img src="/assets/Images/cat3.jpg" />
+                     <div className={style.cat_btn}>
+                        <button>CATOGARY</button>
+                     </div>
+                  </div>
+                  <div className={style.col}>
+                     <img src="/assets/Images/cat4.jpg" />
+                     <div className={style.cat_btn}>
+                        <button>CATOGARY</button>
+                     </div>
+                  </div>
+                  <div className={style.col_hide}>
+                     <img src="/assets/Images/cat1.jpg" />
+                     <div className={style.cat_btn}>
+                        <button>CATOGARY</button>
+                     </div>
+                  </div>
                </div>
-               <div className={style.col}>
-                  <img src="/assets/Images/cat1.jpg" />
-                  <div className={style.cat_btn}>CATOGARY</div>
-               </div>
-            </div>
-            <div className={style.row}>
-               <div className={style.col}>
-                  <img src="/assets/Images/cat3.jpg" />
-                  <div className={style.cat_btn}>CATOGARY</div>
-               </div>
-               <div className={style.col}>
-                  <img src="/assets/Images/cat4.jpg" />
-                  <div className={style.cat_btn}>CATOGARY</div>
-               </div>
-               <div className={style.col}>
-                  <img src="/assets/Images/cat1.jpg" />
-                  <div className={style.cat_btn}>CATOGARY</div>
+               <div className={style.row_dis}>
+                  <div className={style.col}>
+                     <img src="/assets/Images/cat1.jpg" />
+                     <div className={style.cat_btn}>
+                        <button>CATOGARY</button>
+                     </div>
+                  </div>
+                  <div className={style.col}>
+                     <img src="/assets/Images/cat1.jpg" />
+                     <div className={style.cat_btn}>
+                        <button>CATOGARY</button>
+                     </div>
+                  </div>
+
                </div>
             </div>
          </div>
+
       </>
    )
 }
